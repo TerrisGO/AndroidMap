@@ -17,16 +17,22 @@ package com.bnemeth.map;
 
 import android.app.Activity;
 import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.FileUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import org.mapsforge.core.model.LatLong;
+import org.mapsforge.core.util.IOUtils;
 import org.mapsforge.map.android.graphics.AndroidGraphicFactory;
 import org.mapsforge.map.android.rendertheme.AssetsRenderTheme;
 import org.mapsforge.map.android.util.AndroidUtil;
@@ -38,7 +44,19 @@ import org.mapsforge.map.layer.renderer.TileRendererLayer;
 import org.mapsforge.map.reader.MapFile;
 import org.mapsforge.map.rendertheme.XmlRenderTheme;
 import org.mapsforge.map.rendertheme.ExternalRenderTheme;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.util.Enumeration;
+import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 /**
  * A very basic Android app example.
@@ -179,6 +197,8 @@ public class GettingStarted extends Activity {
         mapView.destroyAll();
         AndroidGraphicFactory.clearResourceMemoryCache();
         super.onDestroy();
+
+        unregisterReceiver(onComplete);
     }
 
     public void buttonGpsCenterClick(View view){
@@ -284,10 +304,61 @@ public class GettingStarted extends Activity {
     }
 
     public void buttonDownloadMapClick(View view){
-        //File mapFile = new File(getExternalFilesDir(null), MAP_FILE);
-       //DownloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
-       //Uri uri = Uri.parse("");
-       //DownloadManager.enqueue(new DownloadManager.Request())
+        try{
+            registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
+            //File mapFile = new File(getExternalFilesDir(null), MAP_FILE);
+            DownloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
+            Uri uri = Uri.parse("http://openmaps.eu/dltosm.php?dl=hungary_openmaps_eu_europe.map.zip");
+            DownloadManager.Request request =  new DownloadManager.Request(uri);
+            request.setDestinationInExternalFilesDir(this, null, "hungary.zip");
+            DownloadManager.enqueue(request);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
+
+    BroadcastReceiver onComplete= new BroadcastReceiver() {
+        public void onReceive(Context ctxt, Intent intent) {
+            try{
+                File mapFile = new File(getExternalFilesDir(null), "hungary.zip");
+                ZipFile zipFile = new ZipFile(mapFile);
+                //InputStream stream = zipFile.getInputStream();
+                for(Enumeration e = zipFile.entries(); e.hasMoreElements();){
+                    ZipEntry entry = (ZipEntry)e.nextElement();
+                    if(entry.isDirectory()){
+                        continue;
+                    }
+
+                    File file = new File(getExternalFilesDir(null), MAP_FILE);
+                    BufferedInputStream stream = new BufferedInputStream(zipFile.getInputStream(entry));
+                    BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(file));
+
+                    try {
+                        //IOUtils.copy(stream, outputStream);
+                        copyStream(stream, outputStream);
+                    }
+                    finally {
+                        stream.close();
+                        outputStream.close();
+                    }
+                }
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    };
+
+    public static void copyStream(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int read;
+        while ((read = in.read(buffer)) != -1) {
+            out.write(buffer, 0, read);
+        }
+    }
+
 
 }
