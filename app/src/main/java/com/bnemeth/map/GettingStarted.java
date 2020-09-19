@@ -16,16 +16,19 @@ package com.bnemeth.map;
  */
 
 import android.app.Activity;
+import android.app.DownloadManager;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import org.mapsforge.core.model.LatLong;
 import org.mapsforge.map.android.graphics.AndroidGraphicFactory;
+import org.mapsforge.map.android.rendertheme.AssetsRenderTheme;
 import org.mapsforge.map.android.util.AndroidUtil;
 import org.mapsforge.map.android.view.MapView;
 import org.mapsforge.map.datastore.MapDataStore;
@@ -51,6 +54,12 @@ public class GettingStarted extends Activity {
     private MapView mapView;
 
     final MyLocationOverlay overlay = new MyLocationOverlay();;
+
+    private Boolean IsRequestLocationUpdatesRunning = false;
+    private Location LastLocation = null;
+    LocationListener ContinuousLocationListener = null;
+
+    DownloadManager DownloadManager = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,11 +121,13 @@ public class GettingStarted extends Activity {
 
             //tileRendererLayer.setXmlRenderTheme(InternalRenderTheme.DEFAULT);
 
-            File themeFile = new File(getExternalFilesDir(null), "Openmaps/Theme.xml");
+            //File themeFile = new File(getExternalFilesDir(null), "Openmaps/Theme.xml");
+            //XmlRenderTheme theme = new ExternalRenderTheme(themeFile);
+
+            XmlRenderTheme theme = new AssetsRenderTheme(this, "OpenmapsTheme/","theme.xml");
 
             ///XmlRenderTheme theme = new AssetsRenderTheme(this, "", themeFile.getAbsolutePath());
             //XmlRenderTheme theme = new AssetsRenderTheme(getApplicationContext(), "Openmaps/", "Theme.xml");
-            XmlRenderTheme theme = new ExternalRenderTheme(themeFile);
 
             tileRendererLayer.setXmlRenderTheme(theme);
 
@@ -130,8 +141,8 @@ public class GettingStarted extends Activity {
              * The map also needs to know which area to display and at what zoom level.
              * Note: this map position is specific to Berlin area.
              */
-            mapView.setCenter(new LatLong(47.545809, 19.034227));
-            mapView.setZoomLevel((byte) 14);
+            mapView.setCenter(new LatLong(47.498333,19.0408337)); // Budapest
+            mapView.setZoomLevel((byte) 12);
 
             /*
             Layers layers = mapView.getLayerManager().getLayers();
@@ -170,7 +181,17 @@ public class GettingStarted extends Activity {
         super.onDestroy();
     }
 
-    public void ButtonClick(View view){
+    public void buttonGpsCenterClick(View view){
+        if (IsRequestLocationUpdatesRunning){
+            if (LastLocation != null){
+                //overlay.setPosition(LastLocation.getLatitude(), LastLocation.getLongitude(), LastLocation.getAccuracy());
+                mapView.setCenter(new LatLong(LastLocation.getLatitude(), LastLocation.getLongitude()));
+                mapView.setZoomLevel((byte) 15);
+            }
+
+            return;
+        }
+
         try{
             LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 
@@ -179,6 +200,7 @@ public class GettingStarted extends Activity {
                 public void onLocationChanged(Location location) {
                     overlay.setPosition(location.getLatitude(), location.getLongitude(), location.getAccuracy());
                     mapView.setCenter(new LatLong(location.getLatitude(), location.getLongitude()));
+                    mapView.setZoomLevel((byte) 15);
                 }
 
                 @Override
@@ -204,6 +226,68 @@ public class GettingStarted extends Activity {
              * In case of map file errors avoid crash, but developers should handle these cases!
              */
             e.printStackTrace();
+            throw e;
         }
     }
+
+    public void buttonGpsCenterContinuousClick(View view){
+        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+
+        if (IsRequestLocationUpdatesRunning){
+            IsRequestLocationUpdatesRunning = false;
+
+            if (ContinuousLocationListener != null){
+                lm.removeUpdates(ContinuousLocationListener);
+            }
+            LastLocation = null;
+        }
+
+        ContinuousLocationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                overlay.setPosition(location.getLatitude(), location.getLongitude(), location.getAccuracy());
+
+                if(LastLocation == null){
+                    mapView.setCenter(new LatLong(location.getLatitude(), location.getLongitude()));
+                }
+                LastLocation = location;
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+
+            }
+        };
+
+        try{
+            lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 0, ContinuousLocationListener , getMainLooper());
+            IsRequestLocationUpdatesRunning = true;
+        }
+        catch (SecurityException e) {
+            /*
+             * In case of map file errors avoid crash, but developers should handle these cases!
+             */
+            e.printStackTrace();
+            IsRequestLocationUpdatesRunning = false;
+            lm.removeUpdates(ContinuousLocationListener);
+        }
+    }
+
+    public void buttonDownloadMapClick(View view){
+        //File mapFile = new File(getExternalFilesDir(null), MAP_FILE);
+       //DownloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
+       //Uri uri = Uri.parse("");
+       //DownloadManager.enqueue(new DownloadManager.Request())
+    }
+
 }

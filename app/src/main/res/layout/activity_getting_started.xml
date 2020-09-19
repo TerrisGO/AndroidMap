@@ -19,14 +19,28 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="ButtonClick"
-                android:text="Set location" />
+                android:id="@+id/buttonGpsCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:onClick="buttonGpsCenterClick"
+                android:text="Center" />
+
+            <Button
+                android:id="@+id/buttonGpsCenterContinuous"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:onClick="buttonGpsCenterContinuousClick"
+                android:text="GPS" />
+
+            <Button
+                android:id="@+id/buttonDownloadMap"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Download map"
+                android:onClick="buttonDownloadMapClick"/>
         </LinearLayout>
 
         <LinearLayout
