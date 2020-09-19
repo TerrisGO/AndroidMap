@@ -1,0 +1,2726 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Mapsforge rendertheme for Openmaps by Davidovits
+Contact: http://www.openmaps.eu
+Licence: CC BY-NC-SA 3.0 (Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported) http://http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+-->
+<rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://mapsforge.org/renderTheme ../renderTheme.xsd" version="1" map-background="#ffffea">
+	
+		
+	<!-- Sea, Ocean -->
+	<rule e="way" k="*" v="*" >
+		<rule e="way" k="natural" v="sea">
+			<area fill="#b5d6f1" /> 
+		</rule>
+		<rule e="way" k="natural" v="nosea">
+		<area fill="#ffffea" />
+	</rule>
+	</rule>
+	
+	<!-- ways -->
+	<rule e="way" k="*" v="*">   
+		<!-- landuse -->
+		
+		<rule e="way" k="natural|landuse" v="forest|wood">
+			<rule e="way" k="wood" v="*">
+				<rule e="way" k="wood|leaf_type" v="deciduous|broadleaved">
+					<area src="file:/patterns/wood-deciduous.png" />
+				</rule>
+				<rule e="way" k="wood|leaf_type" v="coniferous|needleleaved">
+					<area src="file:/patterns/wood-coniferous.png" />
+				</rule>
+				<rule e="way" k="wood|leaf_type" v="mixed|leafless">
+					<area src="file:/patterns/wood-mixed.png" />
+				</rule>
+			</rule>
+			<rule e="way" k="wood" v="~">
+				<area src="file:/patterns/wood-mixed.png" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="italic" font-family="serif" font-size="10" fill="#609348" />
+			</rule>
+		</rule>
+
+			<rule e="way" k="natural" v="fell">
+				<area src="file:/patterns/fell.png" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#6E6E6E" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+			</rule>
+			<rule e="way" k="natural" v="scrub">
+				<area src="file:/patterns/scrub.png" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#6E6E6E" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+			</rule>
+			<rule e="way" k="natural" v="bare_rock">
+				<area src="file:/patterns/rock.png" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#6E6E6E" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+			</rule>
+			<rule e="way" k="natural" v="scree">
+				<area src="file:/patterns/scree.png" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#6E6E6E" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+			</rule>
+		
+			<rule e="way" k="landuse" v="orchard">
+			<area src="file:/patterns/orchard.png" />
+			<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#6E6E6E" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			</rule>
+			
+			<rule e="way" k="landuse" v="vineyard">
+			<area src="file:/patterns/vineyard.png" />
+			<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#6E6E6E" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			</rule>
+		
+		<rule e="way" k="landuse|man_made" v="*">
+			<rule e="way" k="landuse" v="military">
+				<area src="file:/patterns/military.png"
+					stroke="#e4e4e4" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="landuse" v="residential|farmyard">
+				<area fill="#f4cd9f" />
+			</rule>
+			<rule e="way" k="landuse" v="retail">
+				<area fill="#ffebeb" stroke="#e4e4e4" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="landuse" v="industrial|brownfield|railway">
+				<area fill="#ecd8ff" stroke="#e4e4e4" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="landuse" v="commercial">
+				<area fill="#ffffc0" stroke="#e4e4e4" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="landuse" v="construction|greenfield">
+				<area fill="#a47c41" stroke="#e4e4e4" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="landuse" v="garages">
+				<area fill="#d6d6e4" />
+			</rule>
+
+			<rule e="way" k="landuse" v="landfill|quarry">
+				<area fill="#e9dd72" stroke="#556b2f" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="landuse" v="cemetery">
+				<area src="file:/patterns/cemetery.png"
+					stroke="#e4e4e4" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="landuse" v="field|farm|farmland|meadow|grass">
+				<area fill="#daf2b6" />
+			</rule>
+			<rule e="way" k="landuse" v="allotments|village_green|recreation_ground">
+				<area fill="#daf2b6" />
+			</rule>
+			<rule e="way" k="landuse" v="reservoir|basin">
+				<area fill="#b5d6f1" />
+			</rule>
+			
+			<rule e="way" k="man_made" v="works">
+				<area fill="#d8dce0" stroke="#8a8b94" stroke-width="0.20" />
+			</rule>
+
+			<rule e="way" k="*" v="*" zoom-min="15">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+		
+		<!-- leisure -->
+		<rule e="way" k="sport" v="golf">
+			<area fill="#c7f1a3" stroke="#6fc18e" stroke-width="0.20" />
+		</rule>
+		<rule e="way" k="leisure" v="*">
+			<rule e="way" k="leisure" v="park|garden|golf_course|common|green">
+				<area fill="#c7f1a3" stroke="#6fc18e" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="leisure" v="playground|playing_fields|pitch|dog_park">
+				<area fill="#c7f1a3" stroke="#6fc18e" stroke-width="0.20" />
+				<rule e="way" k="*" v="playground" zoom-min="17" >
+					<symbol src="file:/symbols/playground.png" />
+				</rule>
+			</rule>
+			<rule e="way" k="leisure" v="nature_reserve">
+				<area src="file:/patterns/nature-reserve.png"
+					stroke="#6fc18e" stroke-width="0.20" />
+			</rule>
+
+			<rule e="way" k="leisure" v="stadium|sports_centre|water_park">
+				<area fill="#bde3cb" stroke="#6fc18e" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="leisure" v="track">
+				<rule e="way" k="area" v="yes|true">
+					<area fill="#bde3cb" stroke="#6fc18e" stroke-width="0.025" />
+				</rule>
+				<rule e="way" k="area" v="~|no|false">
+					<line stroke="#6fc18e" stroke-width="0.75" />
+					<line stroke="#bde3cb" stroke-width="0.70" />
+				</rule>
+			</rule>
+			<rule e="way" k="leisure" v="swimming_pool">
+				<area fill="#b5d6f1" stroke="#6060ff" stroke-width="0.20" />
+			</rule>
+
+			<rule e="way" k="*" v="*" zoom-min="17">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+		
+		<!-- MTB route OMP tunnel -->
+		<rule e="way" k="BR" v="mtb|mtb/bicycle|bicycle/mtb">
+		<rule e="way" k="tunnel" v="true|yes">
+			<rule e="way" k="highway" v="steps|footway|path|track|cycleway|bridleway|platform|pedestrian">
+			<line stroke="#FDB3FD" stroke-width="2.80" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+			<line stroke="#FDB3FD" stroke-width="3.60" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="construction">
+			<line stroke="#FDB3FD" stroke-width="3.25" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="byway">
+			<line stroke="#FDB3FD" stroke-width="3.10" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk">
+			<line stroke="#FDB3FD" stroke-width="3.75" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="motorway">
+			<line stroke="#FDB3FD" stroke-width="5.50" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			</rule>	
+		</rule>	
+		
+		
+		<!-- Bicycle route OMP tunnel -->
+		<rule e="way" k="BR" v="bicycle|mtb/bicycle|bicycle/mtb">
+		<rule e="way" k="tunnel" v="true|yes">
+			<rule e="way" k="highway" v="steps|footway|path|track|cycleway|bridleway|platform|pedestrian">
+			<line stroke="#A400A4" stroke-width="2.80" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+			<line stroke="#A400A4" stroke-width="3.60" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="construction">
+			<line stroke="#A400A4" stroke-width="3.25" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="byway">
+			<line stroke="#A400A4" stroke-width="3.10" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk">
+			<line stroke="#A400A4" stroke-width="3.75" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="motorway">
+			<line stroke="#A400A4" stroke-width="5.50" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+		</rule>	
+		</rule>
+		
+		
+		<!-- Hiking network OMP tunnel -->
+		<rule e="way" k="network" v="omp">
+		<rule e="way" k="tunnel" v="true|yes">
+			<rule e="way" k="highway" v="steps|footway|path|track|cycleway|bridleway|platform|pedestrian">
+			<line stroke="#fd1725" stroke-width="1.80" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+			<line stroke="#fd1725" stroke-width="2.60" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="construction">
+			<line stroke="#fd1725" stroke-width="2.25" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="byway">
+			<line stroke="#fd1725" stroke-width="2.10" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk">
+			<line stroke="#fd1725" stroke-width="2.75" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="motorway">
+			<line stroke="#fd1725" stroke-width="4.50" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+			</rule>
+		</rule>
+		</rule>
+		
+		<!-- Toll highways tunnel-->
+		<rule e="way" k="highway" v="*">
+		<rule e="way" k="tunnel" v="true|yes">
+			<!-- Toll -->
+			<rule cat="toll_roads" e="way" k="toll" v="yes">
+					<rule e="way" k="highway" v="tertiary">
+						<line stroke="#00f9ff" stroke-width="3.50" />
+					</rule>
+					<rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+						<line stroke="#00f9ff" stroke-width="3.50" />
+					</rule>
+					<rule e="way" k="highway" v="secondary">
+						<line stroke="#00f9ff" stroke-width="3.50" />
+					</rule>
+					<rule e="way" k="highway" v="primary|trunk">
+						<line stroke="#00f9ff" stroke-width="3.50" />
+					</rule>
+					<rule e="way" k="highway" v="motorway">
+						<line stroke="#00f9ff" stroke-width="7.00" />
+					</rule>
+				</rule>	
+		</rule>
+		</rule>
+		
+		<!-- Normál utak tunnel 
+-->
+		
+		<rule e="way" k="tunnel" v="true|yes">
+
+			<!-- highway tunnels -->
+			<rule e="way" k="highway" v="*">
+				
+						<rule e="way" k="highway" v="steps|footway|path|track|cycleway|bridleway|platform|pedestrian">
+							<line stroke="#000000" stroke-width="0.80" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="0.65" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />	
+						</rule>
+						<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+							<line stroke="#000000" stroke-width="1.60" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="1.35" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />	
+						</rule>
+						<rule e="way" k="highway" v="construction">
+							<line stroke="#000000" stroke-width="1.25" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="1.00" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />	
+						</rule>
+						<rule e="way" k="highway" v="byway">
+							<line stroke="#000000" stroke-width="1.10" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="0.65" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />	
+						</rule>
+						<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk">
+							<line stroke="#000000" stroke-width="1.75" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="highway" v="motorway">
+							<line stroke="#000000" stroke-width="3.50" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="1.70" stroke-dasharray="5.0,5.0" stroke-linecap="butt" />
+						</rule>
+			</rule>
+
+			<!-- railway tunnel -->
+			<rule e="way" k="railway" v="*">
+				<rule e="way" k="railway" v="tram|subway|light_rail|narrow_gauge">
+					<line stroke="#880f0f4c" stroke-width="0.25" stroke-dasharray="4.0,4.0" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="railway" v="rail">
+					<line stroke="#aa333333" stroke-width="0.40" stroke-dasharray="4.0,4.0" stroke-linecap="butt" />
+				</rule>
+			</rule>
+		</rule>
+
+
+		<!-- amenity -->
+		<rule e="way" k="amenity" v="*">
+			<rule e="way" k="amenity" v="kindergarten|school|college|university">
+				<area fill="#cdabde" stroke="#e9dd72" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="amenity" v="grave_yard">
+				<area src="file:/patterns/cemetery.png"
+					stroke="#e4e4e4" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="amenity" v="parking">
+				<area fill="#ffffc0" stroke="#e9dd72" stroke-width="0.20" />
+				<rule e="way" k="access" v="private" zoom-min="15">
+					<area src="file:/patterns/access-private.png" />
+				</rule>
+				<rule e="way" k="*" v="*" zoom-min="17">
+					<symbol src="file:/symbols/parking.png" />
+				</rule>
+			</rule>
+			<rule e="way" k="amenity" v="fountain" closed="yes">
+				<area fill="#b5d6f1" stroke="#000080" stroke-width="0.15" />
+				<rule e="way" k="*" v="*" zoom-min="17">
+					<symbol src="file:/symbols/fountain.png" />
+				</rule>
+			</rule>
+			<rule e="way" k="amenity" v="hospital" zoom-min="15">
+				<symbol src="file:/symbols/hospital.png" />
+			</rule>
+			<rule e="way" k="amenity" v="theatre" zoom-min="17">
+				<symbol src="file:/symbols/theatre.png" />
+			</rule>
+			<rule e="way" k="amenity" v="toilets" zoom-min="17">
+				<symbol src="file:/symbols/toilets.png" />
+			</rule>
+
+			<rule e="way" k="*" v="*" zoom-min="17">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="1.8" />
+			</rule>
+		</rule>
+
+		<rule e="way" k="shop" v="mall" zoom-min="13">
+			<area fill="#b42f2f" stroke="#b5d6f1" stroke-width="0.1" />
+			<rule e="way" k="*" v="*" zoom-min="16">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="1.80" />
+			</rule>
+		</rule>
+
+		<!-- natural -->
+		<rule e="way" k="natural" v="*">
+			<rule e="way" k="natural" v="coastline">
+				<rule e="way" k="*" v="*" closed="no">
+					<line stroke="#708599" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="*" v="*" closed="yes">
+					<area fill="#b5d6f1" stroke="#b5d6f1" stroke-width="0.40" />
+					<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+
+				</rule>
+			</rule>
+			<rule e="way" k="natural" v="water">
+				<area fill="#b5d6f1" />
+				<rule e="way" k="*" v="*" zoom-min="12">
+				<caption k="name" font-style="bold_italic" font-size="10" fill="#1A8DFF" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+
+			</rule>
+			<rule e="way" k="natural" v="glacier">
+				<area fill="#ddecec" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold_italic" font-size="10" fill="#1A8DFF" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			</rule>
+			<rule e="way" k="natural" v="land">
+				<area fill="#f8f8f8" stroke="#e0e0e0" stroke-width="0.10" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			</rule>
+			<rule e="way" k="natural" v="beach">
+				<area fill="#eecc55" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			</rule>
+			<rule e="way" k="natural" v="heath">
+				<area fill="#ffffc0" stroke="#ffff90" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="natural" v="marsh|wetland">
+				<area src="file:/patterns/marsh.png" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<caption k="name" font-style="bold_italic" font-size="10" fill="#1A8DFF" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			</rule>
+			<rule e="way" k="natural" v="cliff" closed="no" zoom-min="14">
+				<line stroke="#606060" stroke-width="0.30" />
+				<pathText k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="2.00"/>
+				<lineSymbol src="file:symbols/cliff_way.png" repeat="true" repeat-gap="50" />
+			</rule>
+			<rule e="way" k="natural" v="valley" zoom-min="15">
+				<pathText k="name" font-style="bold_italic" font-family="serif" font-size="9" fill="#6E6E6E" stroke="#ffffff" stroke-width="4.00"/>
+			</rule>
+
+		</rule>
+		
+		<!-- contour lines
+ -->
+		
+	<rule e="way" k="contour_ext" v="*">
+			<!-- contour lines level 13 -->
+			<rule e="way" k="contour_ext" v="*" zoom-min="13" zoom-max="13">
+				<rule e="way" k="contour_ext" v="elevation_minor">   
+					<line stroke="#927253" stroke-width="0.20"/>
+				</rule>
+				<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">   
+					<line stroke="#927253" stroke-width="0.50"/>
+				</rule>
+			</rule>
+			<!-- contour lines level 14-->
+			<rule e="way" k="contour_ext" v="*" zoom-min="14" zoom-max="14">
+				<rule e="way" k="contour_ext" v="elevation_minor">   
+					<line stroke="#927253" stroke-width="0.15"/>
+				</rule>
+				<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">   
+					<line stroke="#927253" stroke-width="0.40"/>
+					<rule e="way" k="*" v="*">
+						<pathText k="name" font-style="bold" font-size="6" fill="#927253" stroke="#ffffff" stroke-width="1.00" />
+						<pathText k="ele" font-style="bold" font-size="6" fill="#927253" stroke="#ffffff" stroke-width="1.00" />
+					</rule>				  
+				</rule>   
+			</rule>
+			<!-- contour lines level 15-->
+			<rule e="way" k="contour_ext" v="*" zoom-min="15" zoom-max="15">
+				<rule e="way" k="contour_ext" v="elevation_minor" zoom-max="15">   
+					<line stroke="#927253" stroke-width="0.18"/>
+					<rule e="way" k="*" v="*">
+						<pathText k="name" font-style="bold" font-size="6" fill="#927253" stroke="#ffffff" stroke-width="1.00" />
+						<pathText k="ele" font-style="bold" font-size="6" fill="#927253" stroke="#ffffff" stroke-width="1.00" />
+					</rule>
+				</rule>
+				<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">   
+					<line stroke="#927253" stroke-width="0.3"/>
+					<rule e="way" k="*" v="*">
+						<pathText k="name" font-style="bold" font-size="8" fill="#927253" stroke="#ffffff" stroke-width="1.0" />
+						<pathText k="ele" font-style="bold" font-size="8" fill="#927253" stroke="#ffffff" stroke-width="1.0" />
+					</rule>
+				</rule>
+			</rule>
+			<!-- contour lines level 16 -->
+			<rule e="way" k="contour_ext" v="*" zoom-min="16" zoom-max="16">
+				<rule e="way" k="contour_ext" v="elevation_minor">   
+					<line stroke="#927253" stroke-width="0.14"/>
+					<rule e="way" k="*" v="*">
+						<pathText k="name" font-style="bold" font-size="7" fill="#927253" stroke="#ffffff" stroke-width="1.50" />
+						<pathText k="ele" font-style="bold" font-size="7" fill="#927253" stroke="#ffffff" stroke-width="1.50" />
+					</rule>
+				</rule>
+				<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">   
+					<line stroke="#927253" stroke-width="0.25"/>
+					<rule e="way" k="*" v="*">
+						<pathText k="name" font-style="bold" font-size="9" fill="#927253" stroke="#ffffff" stroke-width="1.50" />
+						<pathText k="ele" font-style="bold" font-size="9" fill="#927253" stroke="#ffffff" stroke-width="1.50" />
+					</rule>
+				</rule>
+			</rule>   
+			<!-- contour lines level 17 and above -->
+			<rule e="way" k="contour_ext" v="*" zoom-min="17">
+				<rule e="way" k="contour_ext" v="elevation_minor">   
+					<line stroke="#927253" stroke-width="0.10"/>
+					<rule e="way" k="*" v="*">
+						<pathText k="name" font-style="bold" font-size="8" fill="#927253" stroke="#ffffff" stroke-width="1.50" />
+						<pathText k="ele" font-style="bold" font-size="8" fill="#927253" stroke="#ffffff" stroke-width="1.50" />
+					</rule>
+				</rule>
+				<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">   
+					<line stroke="#927253" stroke-width="0.20"/>
+					<rule e="way" k="*" v="*">
+						<pathText k="name" font-style="bold" font-size="10" fill="#927253" stroke="#ffffff" stroke-width="1.50" />
+						<pathText k="ele" font-style="bold" font-size="10" fill="#927253" stroke="#ffffff" stroke-width="1.50" />
+					</rule>
+				</rule>
+			</rule>		
+		</rule>
+
+
+		<!-- waterways -->
+		<rule e="way" k="waterway" v="*">
+			<!-- waterway casings -->
+			<rule e="way" k="waterway" v="drain">
+				<line stroke="#b0b0b0" stroke-width="1.00" />
+			</rule>
+			<rule e="way" k="waterway" v="canal">
+				<line stroke="#b0b0b0" stroke-width="1.00" />
+			</rule>
+
+			<!-- waterway cores -->
+						<rule e="way" k="waterway" v="ditch">
+				<line stroke="#1A8DFF" stroke-width="0.60" stroke-dasharray="10.0,5.0" stroke-linecap="butt"/>
+				<line stroke="#b5d6f1" stroke-width="0.40" stroke-dasharray="10.0,5.0" stroke-linecap="butt"/>
+				<lineSymbol src="file:/symbols/bluearrow.png" align-center="true" repeat="true" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<pathText k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#1A8DFF" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+			</rule>
+			<rule e="way" k="waterway" v="drain">
+				<line stroke="#b5d6f1" stroke-width="0.80" />
+				<lineSymbol src="file:/symbols/bluearrow.png" align-center="true" repeat="true" />
+			</rule>
+			<rule e="way" k="waterway" v="canal">
+				<line stroke="#1A8DFF" stroke-width="1.00" />
+				<line stroke="#b5d6f1" stroke-width="0.80" />
+				<lineSymbol src="file:/symbols/bluearrow.png" align-center="true" repeat="true" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<pathText k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#1A8DFF" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+			</rule>
+			<rule e="way" k="waterway" v="stream">
+				<line stroke="#1A8DFF" stroke-width="1.00" />
+				<line stroke="#b5d6f1" stroke-width="0.80" />
+				<lineSymbol src="file:/symbols/bluearrow.png" align-center="true" repeat="true" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+				<pathText k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#1A8DFF" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+			</rule>
+			<rule e="way" k="waterway" v="river">
+				<line stroke="#1A8DFF" stroke-width="2.20" />
+				<line stroke="#b5d6f1" stroke-width="2.00" />
+				<lineSymbol src="file:/symbols/bluearrow.png" align-center="true" repeat="true" />
+				<rule e="way" k="*" v="*" zoom-min="12">
+				<pathText k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#1A8DFF" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+			</rule>
+			<rule e="way" k="waterway" v="dock">
+				<area fill="#b5d6f1" />
+			</rule>
+			<rule e="way" k="waterway" v="riverbank">
+				<area fill="#b5d6f1" />
+			</rule>
+			<rule e="way" k="waterway" v="weir">
+				<line stroke="#000044" stroke-width="0.375" />
+			</rule>
+			<rule e="way" k="waterway" v="dam">
+				<line stroke="#000000" stroke-width="0.50" />
+			</rule>
+			<rule e="way" k="lock" v="yes|true">
+				<line stroke="#000000" stroke-width="2.00" stroke-linecap="butt" />
+				<line stroke="#f8f8f8" stroke-width="1.50" stroke-linecap="butt" />
+			</rule>
+		</rule>
+
+		<!-- military -->
+		<rule e="way" k="military" v="*">
+			<area src="file:/patterns/military.png" stroke="#e4e4e4"
+				stroke-width="0.20" />
+		</rule>
+
+
+		<!-- sport -->
+		<rule e="way" k="sport" v="*">
+			<rule e="way" k="sport" v="soccer" zoom-min="17">
+				<symbol src="file:/symbols/soccer-borderless.png" />
+			</rule>
+			<rule e="way" k="sport" v="swimming|canoe|diving|scuba_diving">
+				<area fill="#b5d6f1" stroke="#6060ff" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="sport" v="tennis">
+				<area fill="#d18a6a" stroke="#b36c4c" stroke-width="0.20" />
+				<rule e="way" k="*" v="*" zoom-min="17">
+					<symbol src="file:/symbols/tennis.png" />
+				</rule>
+			</rule>
+			
+		</rule>
+
+
+		<!-- tourism areas -->
+		<rule e="way" k="tourism" v="*">
+			<rule e="way" k="tourism" v="attraction">
+				<area fill="#f2caea" />
+			</rule>
+			<rule e="way" k="tourism" v="zoo|picnic_site|caravan_site|camp_site">
+				<area fill="#c7f1a3" stroke="#6fc18e" stroke-width="0.20" />
+			</rule>
+
+			<rule e="way" k="*" v="*" zoom-min="16">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+
+
+		<!-- highway area -->
+		<rule e="way" k="area" v="yes|true">
+			<rule e="way" k="highway" v="*">
+				<rule e="way" k="highway" v="footway|footpath">
+					<area fill="#e5e0c2" stroke="#707070" stroke-width="0.15" />
+				</rule>
+				<rule e="way" k="highway" v="pedestrian">
+					<area fill="#e5e0c2" stroke="#707070" stroke-width="0.15" />
+				</rule>
+				<rule e="way" k="highway" v="path">
+					<area fill="#d0d0d0" stroke="#d0d0d0" stroke-width="0.45" />
+				</rule>
+				<rule e="way" k="highway" v="service">
+					<area fill="#ffffff" stroke="#707070" stroke-width="0.15" />
+				</rule>
+				<rule e="way" k="highway" v="unclassified">
+					<area fill="#ffffff" stroke="#707070" stroke-width="0.30" />
+				</rule>
+				<rule e="way" k="highway" v="residential">
+					<area fill="#ffffff" stroke="#707070" stroke-width="0.15" />
+				</rule>
+				<rule e="way" k="highway" v="road">
+					<area fill="#d0d0d0" />
+				</rule>
+				<rule e="way" k="highway" v="living_street">
+					<area fill="#ffffff" stroke="#ffffff" stroke-width="0.15" />
+				</rule>
+			</rule>
+		</rule>
+
+
+		<!-- platform cores -->
+		<rule e="way" k="highway|railway|public_transport" v="platform">
+			<rule e="way" k="*" v="*" closed="yes">
+				<area fill="#9b9b79" />
+			</rule>
+			<rule e="way" k="*" v="*" closed="no">
+				<line stroke="#9b9b79" stroke-width="0.30" />
+			</rule>
+		</rule>
+
+		<!-- runways casings and areas -->
+		<rule e="way" k="aeroway" v="*">
+			<rule e="way" k="aeroway" v="aerodrome" closed="yes">
+				<area fill="#d8dcce" stroke="#000000" stroke-width="0.50" />
+			</rule>
+			<rule e="way" k="aeroway" v="apron">
+				<area fill="#f0f0f0" />
+			</rule>
+			<rule e="way" k="aeroway" v="terminal">
+				<area fill="#f3d6b6" stroke="#6a5a8e" stroke-width="0.20" />
+			</rule>
+			<rule e="way" k="aeroway" v="runway">
+				<line stroke="#000000" stroke-width="6.30" stroke-linecap="square" />
+			</rule>
+			<rule e="way" k="aeroway" v="taxiway">
+				<line stroke="#000000" stroke-width="2.70" stroke-linecap="butt" />
+			</rule>
+
+			<rule e="way" k="*" v="*" zoom-min="16">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+	</rule>
+
+
+		<!-- Bicycle ways no tunnel -->
+
+		<rule e="way" k="lcn|rcn|ncn|icn" v="proposed">
+		<rule e="way" k="tunnel" v="~|no|false">
+			<rule e="way" k="highway" v="footway"><line stroke="#FA41FA" stroke-width="1.60" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14"><line stroke="#FA41FA" stroke-width="1.25" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15"><line stroke="#FA41FA" stroke-width="1.20" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16"><line stroke="#FA41FA" stroke-width="1.15" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="17"><line stroke="#FA41FA" stroke-width="1.10" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade1" zoom-min="13"><line stroke="#FA41FA" stroke-width="1.90" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="14"><line stroke="#FA41FA" stroke-width="1.25" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="15" zoom-max="15"><line stroke="#FA41FA" stroke-width="1.20" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="16" zoom-max="16"><line stroke="#FA41FA" stroke-width="1.15" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="17"><line stroke="#FA41FA" stroke-width="1.10" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road"><line stroke="#FA41FA" stroke-width="2.40" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk"><line stroke="#FA41FA" stroke-width="2.55" stroke-dasharray="5.0,5.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="highway" v="motorway"><line stroke="#FA41FA" stroke-width="4.30" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="cycleway"><line stroke="#FA41FA" stroke-width="1.60" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+		</rule>	
+		</rule>
+		<rule e="way" k="cycleway|cycleway:right|cycleway:left" v="opposite|shared|shared_lane|share_busway">
+		<rule e="way" k="tunnel" v="~|no|false">
+			<rule e="way" k="highway" v="footway"><line stroke="#FA41FA" stroke-width="2.80" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14"><line stroke="#FA41FA" stroke-width="2.45" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15"><line stroke="#FA41FA" stroke-width="2.40" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16"><line stroke="#FA41FA" stroke-width="2.35" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="17"><line stroke="#FA41FA" stroke-width="2.30" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade1" zoom-min="13"><line stroke="#FA41FA" stroke-width="3.00" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="14"><line stroke="#FA41FA" stroke-width="2.45" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="15" zoom-max="15"><line stroke="#FA41FA" stroke-width="2.40" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="16" zoom-max="16"><line stroke="#FA41FA" stroke-width="2.35" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="17"><line stroke="#FA41FA" stroke-width="2.30" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road"><line stroke="#FA41FA" stroke-width="3.60" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk"><line stroke="#FA41FA" stroke-width="3.75" stroke-dasharray="5.0,5.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="highway" v="motorway"><line stroke="#FA41FA" stroke-width="5.50" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="cycleway"><line stroke="#FA41FA" stroke-width="2.80" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+		</rule>	
+		</rule>
+		<rule e="way" k="lcn|rcn|ncn|icn" v="yes">
+		<rule e="way" k="tunnel" v="~|no|false">
+			<rule e="way" k="highway" v="footway"><line stroke="#FA41FA" stroke-width="2.80" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14"><line stroke="#FA41FA" stroke-width="2.45" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15"><line stroke="#FA41FA" stroke-width="2.40" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16"><line stroke="#FA41FA" stroke-width="2.35" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="17"><line stroke="#FA41FA" stroke-width="2.30" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade1" zoom-min="13"><line stroke="#FA41FA" stroke-width="3.00" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="14"><line stroke="#FA41FA" stroke-width="2.45" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="15" zoom-max="15"><line stroke="#FA41FA" stroke-width="2.40" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="16" zoom-max="16"><line stroke="#FA41FA" stroke-width="2.35" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="17"><line stroke="#FA41FA" stroke-width="2.30" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road"><line stroke="#FA41FA" stroke-width="3.60" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk"><line stroke="#FA41FA" stroke-width="3.75" stroke-dasharray="5.0,5.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="highway" v="motorway"><line stroke="#FA41FA" stroke-width="5.50" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="cycleway"><line stroke="#FA41FA" stroke-width="2.80" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+		</rule>	
+		</rule>
+		<rule e="way" k="cycleway|cycleway:right|cycleway:left" v="lane|opposite_lane">
+		<rule e="way" k="tunnel" v="~|no|false">
+			<rule e="way" k="highway" v="footway"><line stroke="#FA41FA" stroke-width="2.80" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14"><line stroke="#FA41FA" stroke-width="2.45" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15"><line stroke="#FA41FA" stroke-width="2.40" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16"><line stroke="#FA41FA" stroke-width="2.35" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="17"><line stroke="#FA41FA" stroke-width="2.30" /></rule>
+			<rule e="way" k="tracktype" v="grade1" zoom-min="13"><line stroke="#FA41FA" stroke-width="3.00" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="14"><line stroke="#FA41FA" stroke-width="2.45" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="15" zoom-max="15"><line stroke="#FA41FA" stroke-width="2.40" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="16" zoom-max="16"><line stroke="#FA41FA" stroke-width="2.35" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="17"><line stroke="#FA41FA" stroke-width="2.30" /></rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road"><line stroke="#FA41FA" stroke-width="3.60" /></rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk"><line stroke="#FA41FA" stroke-width="3.75" /></rule>
+			<rule e="way" k="highway" v="motorway"><line stroke="#FA41FA" stroke-width="5.50" /></rule>
+			<rule e="way" k="highway" v="cycleway"><line stroke="#FA41FA" stroke-width="2.80" /></rule>
+		</rule>	
+		</rule>
+		<rule e="way" k="highway" v="cycleway">
+		<rule e="way" k="tunnel" v="~|no|false">
+			<rule e="way" k="highway" v="cycleway"><line stroke="#FA41FA" stroke-width="2.80" /></rule>
+		</rule>	
+		</rule>
+
+
+		<!-- MTB route OMP no tunnel -->
+		<rule e="way" k="BR" v="mtb|mtb/bicycle|bicycle/mtb">
+		<rule e="way" k="tunnel" v="~|no|false">
+			<rule e="way" k="highway" v="footway"><line stroke="#FFA8FF" stroke-width="2.80" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14"><line stroke="#FFA8FF" stroke-width="2.45" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15"><line stroke="#FFA8FF" stroke-width="2.40" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16"><line stroke="#FFA8FF" stroke-width="2.35" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="17"><line stroke="#FFA8FF" stroke-width="2.30" /></rule>
+			<rule e="way" k="tracktype" v="grade1" zoom-min="13"><line stroke="#FFA8FF" stroke-width="3.00" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="14"><line stroke="#FFA8FF" stroke-width="2.45" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="15" zoom-max="15"><line stroke="#FFA8FF" stroke-width="2.40" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="16" zoom-max="16"><line stroke="#FFA8FF" stroke-width="2.35" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="17"><line stroke="#FFA8FF" stroke-width="2.30" /></rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road"><line stroke="#FFA8FF" stroke-width="3.60" /></rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk"><line stroke="#FFA8FF" stroke-width="3.75" /></rule>
+			<rule e="way" k="highway" v="motorway"><line stroke="#FFA8FF" stroke-width="5.50" /></rule>
+			<rule e="way" k="highway" v="cycleway"><line stroke="#FFA8FF" stroke-width="2.80" /></rule>
+			</rule>
+			</rule>
+			<rule e="way" k="BC" v="G2" zoom-min="15"><lineSymbol src="file:/trailmarks/0x373b.png" align-center="true" repeat="true" rotate="false" repeat-gap="100" repeat-start="0"/>
+			</rule>
+			<rule e="way" k="BC" v="R2" zoom-min="15"><lineSymbol src="file:/trailmarks/0x3739.png" align-center="true" repeat="true" rotate="false" repeat-gap="100" repeat-start="0"/>
+			</rule>
+			<rule e="way" k="BC" v="B2" zoom-min="15"><lineSymbol src="file:/trailmarks/0x373a.png" align-center="true" repeat="true" rotate="false" repeat-gap="100" repeat-start="0"/>
+			</rule>
+			<rule e="way" k="BC" v="Y2" zoom-min="15"><lineSymbol src="file:/trailmarks/0x373c.png" align-center="true" repeat="true" rotate="false" repeat-gap="100" repeat-start="0"/>
+			</rule>	
+			<rule e="way" k="BC" v="B2/G2" zoom-min="15"><lineSymbol src="file:/trailmarks/0x373ab.png" align-center="true" repeat="true" rotate="false" repeat-gap="100" repeat-start="0"/>
+			</rule>
+			<rule e="way" k="BC" v="B2/R2" zoom-min="15"><lineSymbol src="file:/trailmarks/0x373ac.png" align-center="true" repeat="true" rotate="false" repeat-gap="100" repeat-start="0"/>
+			</rule>
+			<rule e="way" k="BC" v="G2/R2" zoom-min="15"><lineSymbol src="file:/trailmarks/0x373bc.png" align-center="true" repeat="true" rotate="false" repeat-gap="100" repeat-start="0"/>
+			</rule>
+			<rule e="way" k="BC" v="B2/G2/R2" zoom-min="15"><lineSymbol src="file:/trailmarks/0x373abc.png" align-center="true" repeat="true" rotate="false" repeat-gap="100" repeat-start="0"/>
+			</rule>
+		
+		
+		<!-- Bicycle route OMP no tunnel -->
+		<rule cat="omp_bc" e="way" k="BR" v="bicycle|mtb/bicycle|bicycle/mtb">
+		<rule e="way" k="tunnel" v="~|no|false">
+			<rule e="way" k="highway" v="footway"><line stroke="#A400A4" stroke-width="2.80" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14"><line stroke="#A400A4" stroke-width="2.45" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15"><line stroke="#A400A4" stroke-width="2.40" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16"><line stroke="#A400A4" stroke-width="2.35" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="17"><line stroke="#A400A4" stroke-width="2.30" /></rule>
+			<rule e="way" k="tracktype" v="grade1" zoom-min="13"><line stroke="#A400A4" stroke-width="3.00" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="14"><line stroke="#A400A4" stroke-width="2.45" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="15" zoom-max="15"><line stroke="#A400A4" stroke-width="2.40" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="16" zoom-max="16"><line stroke="#A400A4" stroke-width="2.35" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="17"><line stroke="#A400A4" stroke-width="2.30" /></rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road"><line stroke="#A400A4" stroke-width="3.60" /></rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk"><line stroke="#A400A4" stroke-width="3.75" /></rule>
+			<rule e="way" k="highway" v="motorway"><line stroke="#A400A4" stroke-width="5.50" /></rule>
+			<rule e="way" k="highway" v="cycleway"><line stroke="#A400A4" stroke-width="2.80" /></rule>
+		</rule>	
+		</rule>
+		
+		<!-- Viaferrata OMP --> 
+		<rule cat="omp_vf" e="way" k="viaferrata" v="omp">
+			<rule e="way" k="highway" v="footway"><line stroke="#fd1725" stroke-width="2.80" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14"><line stroke="#fd1725" stroke-width="2.45" stroke-dasharray="0.9,2.2" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15"><line stroke="#fd1725" stroke-width="2.40" stroke-dasharray="1.2,2.5" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16"><line stroke="#fd1725" stroke-width="2.35" stroke-dasharray="1.5,2.8" stroke-linecap="butt"/></rule>
+			<rule e="way" k="highway" v="path" zoom-min="17"><line stroke="#fd1725" stroke-width="2.30" stroke-dasharray="2.0,3.3" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade1" zoom-min="13"><line stroke="#fd1725" stroke-width="3.00" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="14"><line stroke="#fd1725" stroke-width="2.45" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="15" zoom-max="15"><line stroke="#fd1725" stroke-width="2.40" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="16" zoom-max="16"><line stroke="#fd1725" stroke-width="2.35" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="17"><line stroke="#fd1725" stroke-width="2.30" stroke-dasharray="5.0,5.0" stroke-linecap="butt"/></rule>
+		</rule>	
+		
+		<!-- Hiking network OMP no tunnel -->
+		<rule cat="omp_hiking" e="way" k="network" v="omp">
+		<rule e="way" k="tunnel" v="~|no|false">
+			<rule e="way" k="highway" v="footway"><line stroke="#fd1725" stroke-width="1.80" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14"><line stroke="#fd1725" stroke-width="1.45" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15"><line stroke="#fd1725" stroke-width="1.40" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16"><line stroke="#fd1725" stroke-width="1.35" /></rule>
+			<rule e="way" k="highway" v="path" zoom-min="17"><line stroke="#fd1725" stroke-width="1.30" /></rule>
+			<rule e="way" k="tracktype" v="grade1" zoom-min="13"><line stroke="#fd1725" stroke-width="2.00" /></rule>
+			<rule e="way" k="tracktype" v="grade2" zoom-min="13" zoom-max="14"><line stroke="#fd1725" stroke-width="1.45" /></rule>
+			<rule e="way" k="tracktype" v="grade2" zoom-min="15" zoom-max="15"><line stroke="#fd1725" stroke-width="1.40" /></rule>
+			<rule e="way" k="tracktype" v="grade2" zoom-min="16" zoom-max="16"><line stroke="#fd1725" stroke-width="1.35" /></rule>
+			<rule e="way" k="tracktype" v="grade2" zoom-min="17"><line stroke="#fd1725" stroke-width="1.30" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="14"><line stroke="#fd1725" stroke-width="1.45" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="15" zoom-max="15"><line stroke="#fd1725" stroke-width="1.40" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="16" zoom-max="16"><line stroke="#fd1725" stroke-width="1.35" /></rule>
+			<rule e="way" k="tracktype" v="grade3" zoom-min="17"><line stroke="#fd1725" stroke-width="1.30" /></rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road"><line stroke="#fd1725" stroke-width="2.60" /></rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk"><line stroke="#fd1725" stroke-width="2.75" /></rule>
+			<rule e="way" k="highway" v="motorway"><line stroke="#fd1725" stroke-width="4.50" /></rule>
+			<rule e="way" k="highway" v="cycleway"><line stroke="#fd1725" stroke-width="1.80" /></rule>
+		</rule>
+		</rule>
+		
+		<!-- Toll highways no tunnel-->
+		<rule e="way" k="highway" v="*">
+		<rule e="way" k="tunnel" v="~|no|false">
+			<!-- Toll -->
+			<rule cat="toll_roads" e="way" k="toll" v="yes">
+					<rule e="way" k="highway" v="tertiary">
+						<line stroke="#00f9ff" stroke-width="3.50" />
+					</rule>
+					<rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+						<line stroke="#00f9ff" stroke-width="3.50" />
+					</rule>
+					<rule e="way" k="highway" v="secondary">
+						<line stroke="#00f9ff" stroke-width="3.50" />
+					</rule>
+					<rule e="way" k="highway" v="primary|trunk">
+						<line stroke="#00f9ff" stroke-width="3.50" />
+					</rule>
+					<rule e="way" k="highway" v="motorway">
+						<line stroke="#00f9ff" stroke-width="7.00" />
+					</rule>
+				</rule>	
+		</rule>
+		</rule>
+		
+		<!-- Töltés no tunnel -->
+		<rule e="way" k="embankment" v="yes">
+			<rule e="way" k="highway" v="footway"><line stroke="#000000" stroke-width="1.80" stroke-dasharray="1.0,10.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="highway" v="path"><line stroke="#000000" stroke-width="1.45" stroke-dasharray="1.0,10.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="tracktype" v="grade1|grade2"><line stroke="#000000" stroke-width="2.10" stroke-dasharray="1.0,10.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway"><line stroke="#000000" stroke-width="1.45" stroke-dasharray="1.0,10.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="highway" v="unclassified|residential|living_street|service|road"><line stroke="#000000" stroke-width="2.60" stroke-dasharray="1.0,10.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk"><line stroke="#000000" stroke-width="2.75" stroke-dasharray="1.0,10.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="highway" v="motorway"><line stroke="#000000" stroke-width="4.50" stroke-dasharray="1.0,10.0" stroke-linecap="butt" /></rule>
+			<rule e="way" k="highway" v="cycleway"><line stroke="#000000" stroke-width="1.80" stroke-dasharray="1.0,10.0" stroke-linecap="butt" /></rule>
+		</rule>
+		
+				
+	<!-- building -->
+	<rule e="way" k="building" v="*">
+		<area fill="#c48f76" stroke="#7c523e" stroke-width="0.10" />
+		<rule e="way" k="*" v="*" zoom-min="16">
+		<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+		stroke-width="2.00" />
+		<caption k="addr:housenumber" font-style="bold" font-size="10" fill="#606060" stroke="#ffffff"
+		stroke-width="2.00" />
+		</rule>
+	</rule>
+
+
+
+	<!-- turning circles -->
+	<rule e="node" k="highway" v="turning_circle">
+		<circle r="1.50" scale-radius="true" fill="#707070" />
+	</rule>
+
+
+		<!-- Normál utak kontur-->
+		<rule e="way" k="highway" v="*">
+			<!-- no tunnel -->
+			<rule e="way" k="tunnel" v="~|no|false">
+			<!-- no bridge -->
+			<rule e="way" k="brigde" v="~|no|false">
+				<!-- no area -->
+				<rule e="way" k="area" v="~|no|false">
+					<!-- highway cores -->
+					
+										
+					<rule e="way" k="highway" v="footway|platform|pedestrian">
+						<line stroke="#FFFFFF" stroke-width="0.80" stroke-linecap="butt"/>
+						</rule>
+					<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14">
+						<line stroke="#90FFFFFF" stroke-width="0.45" />
+						</rule>
+					<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15">
+						<line stroke="#90FFFFFF" stroke-width="0.40" />
+						</rule>
+					<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16">
+						<line stroke="#90FFFFFF" stroke-width="0.35" />
+						</rule>
+					<rule e="way" k="highway" v="path" zoom-min="17">
+						<line stroke="#90FFFFFF" stroke-width="0.30" />
+						</rule>	
+					<rule e="way" k="highway" v="track">
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="13" zoom-max="15">
+							<line stroke="#000000" stroke-width="1.10" stroke-dasharray="5.0,8.0" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="16" zoom-max="16">
+							<line stroke="#000000" stroke-width="1.10" stroke-dasharray="7.0,10.0" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="17" zoom-max="17">
+							<line stroke="#000000" stroke-width="1.10" stroke-dasharray="9.0,12.0" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="18">
+							<line stroke="#000000" stroke-width="1.10" stroke-dasharray="12.0,17.0" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="13" zoom-max="14">
+							<line stroke="#90FFFFFF" stroke-width="0.45" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="15" zoom-max="15">
+							<line stroke="#90FFFFFF" stroke-width="0.40" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="16" zoom-max="16">
+							<line stroke="#90FFFFFF" stroke-width="0.35" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="17">
+							<line stroke="#90FFFFFF" stroke-width="0.30" />
+						</rule>
+					</rule>
+															
+					<rule e="way" k="highway" v="construction">
+						<line stroke="#121212" stroke-width="1.25" />
+						
+					</rule>
+					<rule e="way" k="highway" v="steps">
+						<line stroke="#FFFFFF" stroke-width="0.80" />						
+					</rule>
+										
+					<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+						<rule e="way" k="surface" v="~|no|false|paved|asphalt|concrete|concrete:lanes|concrete:plates|paving_stones|sett|unhewn_cobblestone|cobblestone">
+							<line stroke="#121212" stroke-width="1.60" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+						<rule e="way" k="surface" v="unpaved|compacted|fine_gravel|gravel|pebblestone|dirt|earth|grass|grass_paver|ground|mud|sand|woodchips">
+							<line stroke="#000000" stroke-width="1.80" stroke-dasharray="7.0,10.0" stroke-linecap="butt" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="byway">
+						<line stroke="#000000" stroke-width="1.10" stroke-dasharray="7.0,10.0" stroke-linecap="butt" />						
+					</rule>
+					<rule e="way" k="highway" v="tertiary">
+						<line stroke="#121212" stroke-width="1.75" />
+						
+					</rule>
+					<rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+						<line stroke="#121212" stroke-width="1.75" />
+						
+					</rule>
+					<rule e="way" k="highway" v="secondary">
+						<line stroke="#121212" stroke-width="1.75" />
+						
+					</rule>
+					<rule e="way" k="highway" v="primary|trunk">
+						<line stroke="#121212" stroke-width="1.75" />
+						
+
+					</rule>
+					<rule e="way" k="highway" v="motorway">
+						<line stroke="#ff7700" stroke-width="3.50" />
+						
+					</rule>
+					<rule e="way" k="highway" v="cycleway" zoom-min="14">
+						<line stroke="#FFFFFF" stroke-width="0.80" />						
+					</rule>
+			
+				</rule>
+				</rule>
+				</rule>
+			</rule>
+		
+		
+	 <!-- Normál utak magja-->
+		<rule e="way" k="highway" v="*">
+			<!-- no tunnel -->
+			<rule e="way" k="tunnel" v="~|no|false">
+			<!-- no bridge -->
+			<rule e="way" k="brigde" v="~|no|false">
+				<!-- no area -->
+				<rule e="way" k="area" v="~|no|false">
+					<!-- highway cores -->
+					
+										
+					<rule e="way" k="highway" v="footway|platform|pedestrian">
+						<line stroke="#707070" stroke-width="0.20" stroke-dasharray="6.0,6.0" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14">
+						<line stroke="#000000" stroke-width="0.45" stroke-dasharray="2.0,3.0" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15">
+						<line stroke="#000000" stroke-width="0.40" stroke-dasharray="3.0,4.0" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16">
+						<line stroke="#000000" stroke-width="0.35" stroke-dasharray="4.0,6.0" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="path" zoom-min="17">
+						<line stroke="#000000" stroke-width="0.30" stroke-dasharray="4.0,6.0" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="track">
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="13" zoom-max="15">
+							<line stroke="#ffffff" stroke-width="0.65" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="16" zoom-max="16">
+							<line stroke="#ffffff" stroke-width="0.65" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="17" zoom-max="17">
+							<line stroke="#ffffff" stroke-width="0.65" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="18">
+							<line stroke="#ffffff" stroke-width="0.65" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="13" zoom-max="14">
+							<line stroke="#000000" stroke-width="0.45" stroke-dasharray="8.0,5.0" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="15" zoom-max="15">
+							<line stroke="#000000" stroke-width="0.40" stroke-dasharray="9.0,6.0" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="16" zoom-max="16">
+							<line stroke="#000000" stroke-width="0.35" stroke-dasharray="9.0,6.0" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="17">
+							<line stroke="#000000" stroke-width="0.30" stroke-dasharray="10.0,7.0" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+
+	
+
+					</rule>
+															
+					<rule e="way" k="highway" v="construction">
+						<line stroke="#d0d0d0" stroke-width="1.00" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="steps">
+						<line stroke="#FFFFFF" stroke-width="0.80" />
+						<line stroke="#000000" stroke-width="0.60" stroke-dasharray="2.0,3.0" stroke-linecap="butt" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#e5e0c2" stroke-width="2.00" />
+						</rule>
+					</rule>
+										
+					<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+						<line stroke="#ffffff" stroke-width="1.35" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="byway">
+						<line stroke="#ffffff" stroke-width="0.65" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="tertiary">
+						<line stroke="#ffff90" stroke-width="1.50" />
+						<rule e="way" k="*" v="*" zoom-min="14">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+						<line stroke="#ffe168" stroke-width="1.50" />
+						<rule e="way" k="*" v="*" zoom-min="14">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="secondary">
+						<line stroke="#ffe168" stroke-width="1.50" />
+						<rule e="way" k="*" v="*" zoom-min="14" zoom-max="16" >
+						<pathText k="ref" font-style="bold" font-size="10" fill= "#ffffff" stroke="#0000ff" stroke-width="2.00" />	
+						</rule>
+						<rule e="way" k="*" v="*" zoom-min="17">
+						<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="primary|trunk">
+						<line stroke="#fa9e25" stroke-width="1.50" />
+						<rule e="way" k="*" v="*" zoom-min="14" zoom-max="16" >
+						<pathText k="ref" font-style="bold" font-size="10" fill= "#ffffff" stroke="#0000ff" stroke-width="2.00" />	
+						</rule>
+						<rule e="way" k="*" v="*" zoom-min="17">
+						<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="motorway">
+						<line stroke="#ffe168" stroke-width="1.70" />
+						<rule e="way" k="*" v="*" zoom-min="14">
+						<pathText k="ref" font-style="bold" font-size="10" fill= "#ffffff" stroke="#0000ff" stroke-width="4.00" />	
+						<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="cycleway" zoom-min="14">
+						<line stroke="#000000" stroke-width="0.20" stroke-dasharray="4.0,6.0" />
+						<rule e="way" k="*" v="*" zoom-min="16">
+						<lineSymbol src="file:/trailmarks/cycle.png" align-center="true" repeat="true" />
+						<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+				</rule>	
+			</rule>
+			</rule>
+		</rule>
+
+		<!-- runways cores -->
+		<rule e="way" k="aeroway" v="*">
+			<rule e="way" k="aeroway" v="runway">
+				<line stroke="#d4dcbd" stroke-width="4.50" stroke-linecap="square" />
+			</rule>
+			<rule e="way" k="aeroway" v="taxiway">
+				<line stroke="#d4dcbd" stroke-width="1.80" stroke-linecap="butt" />
+			</rule>
+		</rule>
+
+
+		<!-- man_made features -->
+		<rule e="way" k="man_made" v="pier">
+			<rule e="way" k="*" v="*" closed="no">
+				<line stroke="#d0d0d0" stroke-width="0.40" stroke-linecap="butt" />
+				<line stroke="#e4e4e4" stroke-width="0.30" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" closed="yes">
+				<area fill="#e4e4e4" stroke="#d0d0d0" stroke-width="0.05" />
+			</rule>
+		</rule>
+
+		<!-- barriers -->
+		<rule e="way" k="barrier" v="*">
+			<rule e="way" k="barrier" v="fence|wall|city_wall" zoom-min="16">
+				<line stroke="#007200" stroke-width="0.20" stroke-linecap="butt" />
+				<line stroke="#007200" stroke-width="0.60" stroke-dasharray="2.0,13.0" stroke-linecap="butt" />
+				<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />
+
+			</rule>
+			<rule e="way" k="barrier" v="retaining_wall">
+				<line stroke="#888888" stroke-width="0.10" stroke-linecap="butt" />
+			</rule>
+		</rule>
+
+		<!-- non-physical routes -->
+		<rule e="way" k="route" v="ferry">
+			<line stroke="#6c6c90" stroke-width="0.30" stroke-dasharray="15.0,10.0" stroke-linecap="butt" />
+		</rule>
+
+		<!-- highway one-way markers -->
+		<rule e="way" k="tunnel" v="~|false|no">
+			<rule e="way" k="area" v="~|false|no">
+				<rule e="way" k="highway" v="*">
+					<rule e="way" k="oneway" v="yes|true" zoom-min="16">
+						<lineSymbol src="file:/symbols/oneway.png" align-center="true" repeat="true" />
+					</rule>
+				</rule>
+			</rule>
+		</rule>
+
+		<!-- pistes -->
+		<rule e="way" k="piste:type" v="*" >
+			<rule e="way" k="piste:type" v="downhill" zoom-min="14" >
+				<rule e="way" k="piste:difficulty" v="expert|freeride" >
+				<line stroke="#70ff8c00" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="piste:difficulty" v="advanced" zoom-min="14" >
+				<line stroke="#70000000" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="piste:difficulty" v="intermediate" zoom-min="14" >
+				<line stroke="#70ff0000" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="piste:difficulty" v="easy" zoom-min="14" >
+				<line stroke="#700054ff" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="piste:difficulty" v="novice" zoom-min="14" >
+				<line stroke="#700dbd00" stroke-width="2.00" />
+				</rule>
+			</rule>
+			<rule e="way" k="piste:type" v="sled" zoom-min="14" >
+			<line stroke="#70fa41fa" stroke-width="2.00" />
+			<rule e="way" k="*" v="*" zoom-min="16">
+			<lineSymbol src="file:/symbols/sled.png" align-center="true" repeat="true" repeat-start="0" repeat-gap="60" />
+				</rule>
+				</rule>
+			<rule e="way" k="piste:type" v="skitour|nordic" zoom-min="14" >
+			<line stroke="#70fa41fa" stroke-width="2.00" />
+			<rule e="way" k="*" v="*" zoom-min="16">
+			<lineSymbol src="file:/symbols/skitour.png" align-center="true" repeat="true" repeat-start="0" repeat-gap="80" />
+				</rule>
+				</rule>
+	</rule>
+	<!-- <rule e="way" k="piste:type" v="downhill" closed="yes">
+		<line stroke="#5598F5FF" stroke-width="1.2" />
+		<area fill="#5598F5FF" />
+	</rule> -->
+
+		<!-- aerial ways -->
+		<rule e="way" k="aerialway" v="*">
+			<line stroke="#202020" stroke-width="0.40" stroke-linecap="butt" />
+			<rule e="way" k="*" v="*" zoom-max="15">
+			<line stroke="#202020" stroke-width="1.10" stroke-dasharray="1.5,8.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+			<line stroke="#202020" stroke-width="1.10" stroke-dasharray="2.0,15.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+			<line stroke="#202020" stroke-width="1.00" stroke-dasharray="3.0,30.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="18" >
+			<line stroke="#202020" stroke-width="1.00" stroke-dasharray="3.0,50.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="aerialway" v="cable_car" zoom-min="15" >
+			<lineSymbol src="file:/symbols/gondola.png" repeat="true" />
+			</rule>
+			<rule e="way" k="aerialway" v="chair_lift" zoom-min="15" >
+			<lineSymbol src="file:/symbols/chair_lift.png" repeat="true" />
+			</rule>
+			<rule e="way" k="aerialway" v="drag_lift" zoom-min="15" >
+			<lineSymbol src="file:/symbols/drag_lift.png" repeat="true" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="14">
+				<pathText k="name" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+
+		<!-- railway (no tunnel) -->
+		<rule e="way" k="railway" v="*">
+			<rule e="way" k="tunnel" v="~|false|no">
+				<rule e="way" k="railway" v="station">
+					<area fill="#9b9b79" stroke="#707070" stroke-width="0.30" />
+				</rule>
+
+				<!-- railway bridge casings -->
+				<rule e="way" k="bridge" v="yes|true">
+					<rule e="way" k="railway" v="tram">
+						<line stroke="#000000" stroke-width="0.40" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="railway" v="subway|light_rail|narrow_gauge">
+						<line stroke="#000000" stroke-width="0.60" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="railway" v="rail">
+						<line stroke="#000000" stroke-width="0.80" stroke-linecap="butt" />
+					</rule>
+				</rule>
+
+				<!-- railway casings and cores -->
+				<rule e="way" k="railway" v="tram">
+					<line stroke="#303030" stroke-width="0.30" stroke-linecap="butt" />
+					<line stroke="#303030" stroke-width="0.70" stroke-dasharray="1.0,1.6,1.0,10.0" stroke-linecap="butt" />
+					<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="railway" v="subway">
+					<line stroke="#0f0f4c" stroke-width="0.50" stroke-linecap="butt" />
+					<line stroke="#b7b7e6" stroke-width="0.30" stroke-dasharray="12.0,18.0" stroke-linecap="butt" />
+					<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="railway" v="light_rail">
+					<line stroke="#0f4c0f" stroke-width="0.40" stroke-linecap="butt" />
+					<line stroke="#b7e6e6" stroke-width="0.25" stroke-linecap="butt" />
+					<line stroke="#0f4c0f" stroke-width="0.25" stroke-dasharray="10.0,16.0" stroke-linecap="butt" />
+					<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="railway" v="narrow_gauge">
+					<line stroke="#252525" stroke-width="0.50" stroke-linecap="butt" />
+					<line stroke="#FFFFFF" stroke-width="0.30" stroke-linecap="butt" />
+					<line stroke="#252525" stroke-width="0.30" stroke-dasharray="18.0,18.0" stroke-linecap="butt" />
+					<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="railway" v="rail" zoom-min="17">
+					<line stroke="#252525" stroke-width="0.60" stroke-linecap="butt" />
+					<line stroke="#FFFFFF" stroke-width="0.40" stroke-linecap="butt" />
+					<line stroke="#252525" stroke-width="0.40" stroke-dasharray="14.0,10.0" stroke-linecap="butt" />
+					<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+				<rule e="way" k="railway" v="rail" zoom-max="16">
+					<line stroke="#252525" stroke-width="0.80" stroke-linecap="butt" />
+					<line stroke="#FFFFFF" stroke-width="0.60" stroke-linecap="butt" />
+					<line stroke="#252525" stroke-width="0.60" stroke-dasharray="7.0,5.0" stroke-linecap="butt" />
+					<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />
+				</rule>
+			</rule>
+		</rule>
+		
+				<!-- Hidak -->
+	<rule e="way" k="*" v="*">
+		<!-- no tunnel -->
+		<rule e="way" k="tunnel" v="~|no|false">
+		<!-- bridge -->
+		<rule e="way" k="bridge" v="yes|true">
+			<!-- no area -->
+			<rule e="way" k="area" v="~|no|false">
+				<!-- highway -->
+				<rule e="way" k="highway" v="*">
+					
+						<!-- Hidak kiemelese -->
+						<rule e="way" k="highway" v="steps|footway|path|track|cycleway|bridleway|platform|pedestrian">
+							<line stroke="#000000" stroke-width="1.50" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="0.80" stroke-linecap="butt" />	
+						</rule>
+						<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+							<line stroke="#000000" stroke-width="2.65" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="2.20" stroke-linecap="butt" />	
+						</rule>
+						<rule e="way" k="highway" v="construction">
+							<line stroke="#000000" stroke-width="2.25" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="1.85" stroke-linecap="butt" />	
+						</rule>
+						<rule e="way" k="highway" v="byway">
+							<line stroke="#000000" stroke-width="2.15" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="1.70" stroke-linecap="butt" />	
+						</rule>
+						<rule e="way" k="highway" v="tertiary|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link|secondary|primary|trunk">
+							<line stroke="#000000" stroke-width="2.80" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="2.35" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="highway" v="motorway">
+							<line stroke="#000000" stroke-width="4.55" stroke-linecap="butt" />
+							<line stroke="#FFFFFF" stroke-width="4.10" stroke-linecap="butt" />
+						</rule>
+					
+					<!-- Hidak konturja -->	
+						<rule e="way" k="highway" v="footway|platform|pedestrian">
+						<line stroke="#FFFFFF" stroke-width="0.80" stroke-linecap="butt"/>
+						</rule>
+					<rule e="way" k="highway" v="cycleway" zoom-min="14">
+						<line stroke="#FFFFFF" stroke-width="0.80" stroke-linecap="butt"/>						
+					</rule>
+					<rule e="way" k="highway" v="track">
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="13" zoom-max="15">
+							<line stroke="#000000" stroke-width="1.10" stroke-dasharray="5.0,8.0" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="16" zoom-max="16">
+							<line stroke="#000000" stroke-width="1.10" stroke-dasharray="7.0,10.0" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="17" zoom-max="17">
+							<line stroke="#000000" stroke-width="1.10" stroke-dasharray="9.0,12.0" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="18">
+							<line stroke="#000000" stroke-width="1.10" stroke-dasharray="12.0,17.0" stroke-linecap="butt" />
+						</rule>
+					</rule>
+															
+					<rule e="way" k="highway" v="construction">
+						<line stroke="#121212" stroke-width="1.25" stroke-linecap="butt"/>
+						
+					</rule>
+					<rule e="way" k="highway" v="steps">
+						<line stroke="#FFFFFF" stroke-width="0.80" stroke-linecap="butt"/>						
+					</rule>
+										
+					<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+						<line stroke="#121212" stroke-width="1.60" stroke-linecap="butt"/>
+						
+					</rule>
+					<rule e="way" k="highway" v="byway">
+						<line stroke="#000000" stroke-width="1.10" stroke-dasharray="7.0,10.0" stroke-linecap="butt" />						
+					</rule>
+					<rule e="way" k="highway" v="tertiary">
+						<line stroke="#121212" stroke-width="1.75" stroke-linecap="butt"/>
+						
+					</rule>
+					<rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+						<line stroke="#121212" stroke-width="1.75" stroke-linecap="butt"/>
+						
+					</rule>
+					<rule e="way" k="highway" v="secondary">
+						<line stroke="#121212" stroke-width="1.75" stroke-linecap="butt"/>
+						
+					</rule>
+					<rule e="way" k="highway" v="primary|trunk">
+						<line stroke="#121212" stroke-width="1.75" stroke-linecap="butt"/>
+						
+
+					</rule>
+					<rule e="way" k="highway" v="motorway">
+						<line stroke="#ff7700" stroke-width="3.50" stroke-linecap="butt"/>
+						
+					</rule>
+				
+				<!-- Hidak magja -->	
+					<rule e="way" k="highway" v="footway|platform|pedestrian">
+						<line stroke="#707070" stroke-width="0.20" stroke-dasharray="6.0,6.0" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="cycleway" zoom-min="14">
+						<line stroke="#000000" stroke-width="0.20" stroke-dasharray="4.0,6.0" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="16">
+						<lineSymbol src="file:/trailmarks/cycle.svg" align-center="true" repeat="true" />
+						<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+
+					<rule e="way" k="highway" v="path" zoom-min="13" zoom-max="14">
+						<line stroke="#000000" stroke-width="0.45" stroke-dasharray="2.0,3.0" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="path" zoom-min="15" zoom-max="15">
+						<line stroke="#000000" stroke-width="0.40" stroke-dasharray="3.0,4.0" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="path" zoom-min="16" zoom-max="16">
+						<line stroke="#000000" stroke-width="0.35" stroke-dasharray="4.0,6.0" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="path" zoom-min="17">
+						<line stroke="#000000" stroke-width="0.30" stroke-dasharray="4.0,6.0" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="track">
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="13" zoom-max="15">
+							<line stroke="#ffffff" stroke-width="0.65" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="16" zoom-max="16">
+							<line stroke="#ffffff" stroke-width="0.65" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="17" zoom-max="17">
+							<line stroke="#ffffff" stroke-width="0.65" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="18">
+							<line stroke="#ffffff" stroke-width="0.65" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="13" zoom-max="14">
+							<line stroke="#000000" stroke-width="0.45" stroke-dasharray="8.0,5.0" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="15" zoom-max="15">
+							<line stroke="#000000" stroke-width="0.40" stroke-dasharray="9.0,6.0" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="16" zoom-max="16">
+							<line stroke="#000000" stroke-width="0.35" stroke-dasharray="9.0,6.0" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+
+						<rule e="way" k="tracktype" v="grade3|grade4|grade5|bridleway" zoom-min="17">
+							<line stroke="#000000" stroke-width="0.30" stroke-dasharray="10.0,7.0" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+						</rule>
+
+			
+						<rule e="way" k="tracktype" v="~|no|false">
+							<line stroke="#000000" stroke-width="0.35" stroke-dasharray="9.0,6.0" />
+							<rule e="way" k="*" v="*" zoom-min="15">
+								<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+							</rule>
+
+						</rule>
+						
+
+					</rule>
+					
+										
+					<rule e="way" k="highway" v="construction">
+						<line stroke="#d0d0d0" stroke-width="1.00" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="steps">
+						<line stroke="#FFFFFF" stroke-width="0.80" stroke-linecap="butt"/>
+						<line stroke="#000000" stroke-width="0.60" stroke-dasharray="2.0,3.0" stroke-linecap="butt" />
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#e5e0c2" stroke-width="2.00" />
+						</rule>
+					</rule>
+										
+					<rule e="way" k="highway" v="unclassified|residential|living_street|service|road">
+						<line stroke="#ffffff" stroke-width="1.35" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="byway">
+						<line stroke="#ffffff" stroke-width="0.65" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="15">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="tertiary">
+						<line stroke="#ffff90" stroke-width="1.50" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="14">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+						<line stroke="#ffe168" stroke-width="1.50" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="14">
+							<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="secondary">
+						<line stroke="#ffe168" stroke-width="1.50" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="14" zoom-max="16" >
+						<pathText k="ref" font-style="bold" font-size="10" fill= "#ffffff" stroke="#0000ff" stroke-width="2.00" />	
+						</rule>
+						<rule e="way" k="*" v="*" zoom-min="17">
+						<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="primary|trunk">
+						<line stroke="#fa9e25" stroke-width="1.50" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="14" zoom-max="16" >
+						<pathText k="ref" font-style="bold" font-size="10" fill= "#ffffff" stroke="#0000ff" stroke-width="2.00" />	
+						</rule>
+						<rule e="way" k="*" v="*" zoom-min="17">
+						<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					<rule e="way" k="highway" v="motorway">
+						<line stroke="#ffe168" stroke-width="1.70" stroke-linecap="butt"/>
+						<rule e="way" k="*" v="*" zoom-min="14">
+						<pathText k="ref" font-style="bold" font-size="10" fill= "#ffffff" stroke="#0000ff" stroke-width="4.00" />	
+						<pathText k="name" font-style="bold" font-size="10" stroke="#ffffff" stroke-width="2.00" />
+						</rule>
+					</rule>
+					</rule>
+				</rule>
+				</rule>
+			</rule>
+		</rule>
+
+		<!-- non-physical boundaries -->
+		<rule e="way" k="boundary" v="*">
+			<rule e="way" k="boundary" v="national_park">
+				<line stroke="#B80B0B" stroke-width="0.20" stroke-linecap="butt" />
+				<line stroke="#B80B0B" stroke-width="0.60" stroke-dasharray="2.0,13.0" stroke-linecap="butt" />
+				<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />
+
+			</rule>
+			<rule e="way" k="boundary" v="political">
+				<line stroke="#cc00ff" stroke-width="0.70" />
+				<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />	
+			</rule>	
+			<rule e="way" k="boundary" v="administrative">
+				<line stroke="#80cc00ff" stroke-width="0.50" stroke-dasharray="3.0,5.0" stroke-linecap="butt" />
+				<pathText k="name" font-style="bold" font-size="9" stroke="#ffffff" stroke-width="2.00" />	
+			</rule>	
+
+		</rule>
+
+
+
+		<!-- place -->
+		<rule e="way" k="place" v="locality" zoom-min="17">
+			<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+				stroke-width="2.00" />
+		</rule>
+		
+		<!-- power -->
+		<rule e="way" k="power" v="line" zoom-max="15" >
+			<line stroke="#808080" stroke-width="0.30" stroke-linecap="butt" />
+			<line stroke="#808080" stroke-width="1.00" stroke-dasharray="1.3,30.0" stroke-linecap="round" />
+		</rule>
+		<rule e="way" k="power" v="line" zoom-max="16" zoom-min="16">
+			<line stroke="#808080" stroke-width="0.30" stroke-linecap="butt" />
+			<line stroke="#808080" stroke-width="1.00" stroke-dasharray="1.3,50.0" stroke-linecap="round" />
+		</rule>
+		<rule e="way" k="power" v="line" zoom-max="17" zoom-min="17">
+			<line stroke="#808080" stroke-width="0.25" stroke-linecap="butt" />
+			<line stroke="#808080" stroke-width="0.80" stroke-dasharray="1.2,110.0" stroke-linecap="round" />
+		</rule>
+		<rule e="way" k="power" v="line" zoom-min="18">
+			<line stroke="#808080" stroke-width="0.20" stroke-linecap="butt" />
+			<line stroke="#808080" stroke-width="0.60" stroke-dasharray="1.0,120.0" stroke-linecap="round" />
+		</rule>
+
+
+	
+		
+		
+		
+	<!-- NODES -->
+	<rule e="node" k="*" v="*">
+		<!-- aeroway -->
+		<rule e="node" k="aeroway" v="*">
+			<rule e="node" k="aeroway" v="helipad" zoom-min="15">
+				<symbol src="file:/symbols/helipad.png" />
+			</rule>
+			<rule e="node" k="aeroway" v="aerodrome|airport" zoom-min="13">
+				<symbol src="file:/symbols/airport.png" />
+				<caption k="name" dy="-19" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff" stroke-width="2.00" />
+			</rule>
+		</rule>
+		
+		
+		<!-- OMP TRAIL MARKS -->
+		<rule e="node" k="Type" v="*">
+<rule e="node" k="Type" v="0x3320-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3320.png"/></rule>
+<rule e="node" k="Type" v="0x3320-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3320.png"/></rule>
+<rule e="node" k="Type" v="0x3320-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3320.png"/></rule>
+<rule e="node" k="Type" v="0x3320-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3320.png"/></rule>
+<rule e="node" k="Type" v="0x3320-18" zoom-min="18"><symbol src="file:/trailmarks/0x3320.png"/></rule>
+<rule e="node" k="Type" v="0x3321-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3321.png"/></rule>
+<rule e="node" k="Type" v="0x3321-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3321.png"/></rule>
+<rule e="node" k="Type" v="0x3321-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3321.png"/></rule>
+<rule e="node" k="Type" v="0x3321-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3321.png"/></rule>
+<rule e="node" k="Type" v="0x3321-18" zoom-min="18"><symbol src="file:/trailmarks/0x3321.png"/></rule>
+<rule e="node" k="Type" v="0x3322-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3322.png"/></rule>
+<rule e="node" k="Type" v="0x3322-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3322.png"/></rule>
+<rule e="node" k="Type" v="0x3322-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3322.png"/></rule>
+<rule e="node" k="Type" v="0x3322-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3322.png"/></rule>
+<rule e="node" k="Type" v="0x3322-18" zoom-min="18"><symbol src="file:/trailmarks/0x3322.png"/></rule>
+<rule e="node" k="Type" v="0x3323-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3323.png"/></rule>
+<rule e="node" k="Type" v="0x3323-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3323.png"/></rule>
+<rule e="node" k="Type" v="0x3323-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3323.png"/></rule>
+<rule e="node" k="Type" v="0x3323-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3323.png"/></rule>
+<rule e="node" k="Type" v="0x3323-18" zoom-min="18"><symbol src="file:/trailmarks/0x3323.png"/></rule>
+<rule e="node" k="Type" v="0x3324-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3324.png"/></rule>
+<rule e="node" k="Type" v="0x3324-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3324.png"/></rule>
+<rule e="node" k="Type" v="0x3324-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3324.png"/></rule>
+<rule e="node" k="Type" v="0x3324-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3324.png"/></rule>
+<rule e="node" k="Type" v="0x3324-18" zoom-min="18"><symbol src="file:/trailmarks/0x3324.png"/></rule>
+<rule e="node" k="Type" v="0x3325-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3325.png"/></rule>
+<rule e="node" k="Type" v="0x3325-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3325.png"/></rule>
+<rule e="node" k="Type" v="0x3325-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3325.png"/></rule>
+<rule e="node" k="Type" v="0x3325-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3325.png"/></rule>
+<rule e="node" k="Type" v="0x3325-18" zoom-min="18"><symbol src="file:/trailmarks/0x3325.png"/></rule>
+<rule e="node" k="Type" v="0x3326-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3326.png"/></rule>
+<rule e="node" k="Type" v="0x3326-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3326.png"/></rule>
+<rule e="node" k="Type" v="0x3326-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3326.png"/></rule>
+<rule e="node" k="Type" v="0x3326-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3326.png"/></rule>
+<rule e="node" k="Type" v="0x3326-18" zoom-min="18"><symbol src="file:/trailmarks/0x3326.png"/></rule>
+<rule e="node" k="Type" v="0x3327-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3327.png"/></rule>
+<rule e="node" k="Type" v="0x3327-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3327.png"/></rule>
+<rule e="node" k="Type" v="0x3327-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3327.png"/></rule>
+<rule e="node" k="Type" v="0x3327-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3327.png"/></rule>
+<rule e="node" k="Type" v="0x3327-18" zoom-min="18"><symbol src="file:/trailmarks/0x3327.png"/></rule>
+<rule e="node" k="Type" v="0x3328-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3328.png"/></rule>
+<rule e="node" k="Type" v="0x3328-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3328.png"/></rule>
+<rule e="node" k="Type" v="0x3328-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3328.png"/></rule>
+<rule e="node" k="Type" v="0x3328-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3328.png"/></rule>
+<rule e="node" k="Type" v="0x3328-18" zoom-min="18"><symbol src="file:/trailmarks/0x3328.png"/></rule>
+<rule e="node" k="Type" v="0x3329-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3329.png"/></rule>
+<rule e="node" k="Type" v="0x3329-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3329.png"/></rule>
+<rule e="node" k="Type" v="0x3329-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3329.png"/></rule>
+<rule e="node" k="Type" v="0x3329-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3329.png"/></rule>
+<rule e="node" k="Type" v="0x3329-18" zoom-min="18"><symbol src="file:/trailmarks/0x3329.png"/></rule>
+<rule e="node" k="Type" v="0x332a-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x332a.png"/></rule>
+<rule e="node" k="Type" v="0x332a-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x332a.png"/></rule>
+<rule e="node" k="Type" v="0x332a-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x332a.png"/></rule>
+<rule e="node" k="Type" v="0x332a-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x332a.png"/></rule>
+<rule e="node" k="Type" v="0x332a-18" zoom-min="18"><symbol src="file:/trailmarks/0x332a.png"/></rule>
+<rule e="node" k="Type" v="0x332b-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x332b.png"/></rule>
+<rule e="node" k="Type" v="0x332b-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x332b.png"/></rule>
+<rule e="node" k="Type" v="0x332b-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x332b.png"/></rule>
+<rule e="node" k="Type" v="0x332b-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x332b.png"/></rule>
+<rule e="node" k="Type" v="0x332b-18" zoom-min="18"><symbol src="file:/trailmarks/0x332b.png"/></rule>
+<rule e="node" k="Type" v="0x332c-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x332c.png"/></rule>
+<rule e="node" k="Type" v="0x332c-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x332c.png"/></rule>
+<rule e="node" k="Type" v="0x332c-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x332c.png"/></rule>
+<rule e="node" k="Type" v="0x332c-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x332c.png"/></rule>
+<rule e="node" k="Type" v="0x332c-18" zoom-min="18"><symbol src="file:/trailmarks/0x332c.png"/></rule>
+<rule e="node" k="Type" v="0x332d-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x332d.png"/></rule>
+<rule e="node" k="Type" v="0x332d-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x332d.png"/></rule>
+<rule e="node" k="Type" v="0x332d-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x332d.png"/></rule>
+<rule e="node" k="Type" v="0x332d-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x332d.png"/></rule>
+<rule e="node" k="Type" v="0x332d-18" zoom-min="18"><symbol src="file:/trailmarks/0x332d.png"/></rule>
+<rule e="node" k="Type" v="0x332e-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x332e.png"/></rule>
+<rule e="node" k="Type" v="0x332e-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x332e.png"/></rule>
+<rule e="node" k="Type" v="0x332e-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x332e.png"/></rule>
+<rule e="node" k="Type" v="0x332e-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x332e.png"/></rule>
+<rule e="node" k="Type" v="0x332e-18" zoom-min="18"><symbol src="file:/trailmarks/0x332e.png"/></rule>
+<rule e="node" k="Type" v="0x332f-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x332f.png"/></rule>
+<rule e="node" k="Type" v="0x332f-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x332f.png"/></rule>
+<rule e="node" k="Type" v="0x332f-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x332f.png"/></rule>
+<rule e="node" k="Type" v="0x332f-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x332f.png"/></rule>
+<rule e="node" k="Type" v="0x332f-18" zoom-min="18"><symbol src="file:/trailmarks/0x332f.png"/></rule>
+<rule e="node" k="Type" v="0x3330-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3330.png"/></rule>
+<rule e="node" k="Type" v="0x3330-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3330.png"/></rule>
+<rule e="node" k="Type" v="0x3330-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3330.png"/></rule>
+<rule e="node" k="Type" v="0x3330-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3330.png"/></rule>
+<rule e="node" k="Type" v="0x3330-18" zoom-min="18"><symbol src="file:/trailmarks/0x3330.png"/></rule>
+<rule e="node" k="Type" v="0x3331-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3331.png"/></rule>
+<rule e="node" k="Type" v="0x3331-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3331.png"/></rule>
+<rule e="node" k="Type" v="0x3331-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3331.png"/></rule>
+<rule e="node" k="Type" v="0x3331-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3331.png"/></rule>
+<rule e="node" k="Type" v="0x3331-18" zoom-min="18"><symbol src="file:/trailmarks/0x3331.png"/></rule>
+<rule e="node" k="Type" v="0x3332-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3332.png"/></rule>
+<rule e="node" k="Type" v="0x3332-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3332.png"/></rule>
+<rule e="node" k="Type" v="0x3332-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3332.png"/></rule>
+<rule e="node" k="Type" v="0x3332-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3332.png"/></rule>
+<rule e="node" k="Type" v="0x3332-18" zoom-min="18"><symbol src="file:/trailmarks/0x3332.png"/></rule>
+<rule e="node" k="Type" v="0x3333-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3333.png"/></rule>
+<rule e="node" k="Type" v="0x3333-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3333.png"/></rule>
+<rule e="node" k="Type" v="0x3333-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3333.png"/></rule>
+<rule e="node" k="Type" v="0x3333-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3333.png"/></rule>
+<rule e="node" k="Type" v="0x3333-18" zoom-min="18"><symbol src="file:/trailmarks/0x3333.png"/></rule>
+<rule e="node" k="Type" v="0x3334-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3334.png"/></rule>
+<rule e="node" k="Type" v="0x3334-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3334.png"/></rule>
+<rule e="node" k="Type" v="0x3334-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3334.png"/></rule>
+<rule e="node" k="Type" v="0x3334-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3334.png"/></rule>
+<rule e="node" k="Type" v="0x3334-18" zoom-min="18"><symbol src="file:/trailmarks/0x3334.png"/></rule>
+<rule e="node" k="Type" v="0x3335-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3335.png"/></rule>
+<rule e="node" k="Type" v="0x3335-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3335.png"/></rule>
+<rule e="node" k="Type" v="0x3335-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3335.png"/></rule>
+<rule e="node" k="Type" v="0x3335-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3335.png"/></rule>
+<rule e="node" k="Type" v="0x3335-18" zoom-min="18"><symbol src="file:/trailmarks/0x3335.png"/></rule>
+<rule e="node" k="Type" v="0x3336-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3336.png"/></rule>
+<rule e="node" k="Type" v="0x3336-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3336.png"/></rule>
+<rule e="node" k="Type" v="0x3336-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3336.png"/></rule>
+<rule e="node" k="Type" v="0x3336-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3336.png"/></rule>
+<rule e="node" k="Type" v="0x3336-18" zoom-min="18"><symbol src="file:/trailmarks/0x3336.png"/></rule>
+<rule e="node" k="Type" v="0x3337-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3337.png"/></rule>
+<rule e="node" k="Type" v="0x3337-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3337.png"/></rule>
+<rule e="node" k="Type" v="0x3337-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3337.png"/></rule>
+<rule e="node" k="Type" v="0x3337-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3337.png"/></rule>
+<rule e="node" k="Type" v="0x3337-18" zoom-min="18"><symbol src="file:/trailmarks/0x3337.png"/></rule>
+<rule e="node" k="Type" v="0x3338-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3338.png"/></rule>
+<rule e="node" k="Type" v="0x3338-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3338.png"/></rule>
+<rule e="node" k="Type" v="0x3338-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3338.png"/></rule>
+<rule e="node" k="Type" v="0x3338-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3338.png"/></rule>
+<rule e="node" k="Type" v="0x3338-18" zoom-min="18"><symbol src="file:/trailmarks/0x3338.png"/></rule>
+<rule e="node" k="Type" v="0x3339-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3339.png"/></rule>
+<rule e="node" k="Type" v="0x3339-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3339.png"/></rule>
+<rule e="node" k="Type" v="0x3339-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3339.png"/></rule>
+<rule e="node" k="Type" v="0x3339-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3339.png"/></rule>
+<rule e="node" k="Type" v="0x3339-18" zoom-min="18"><symbol src="file:/trailmarks/0x3339.png"/></rule>
+<rule e="node" k="Type" v="0x333a-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x333a.png"/></rule>
+<rule e="node" k="Type" v="0x333a-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x333a.png"/></rule>
+<rule e="node" k="Type" v="0x333a-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x333a.png"/></rule>
+<rule e="node" k="Type" v="0x333a-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x333a.png"/></rule>
+<rule e="node" k="Type" v="0x333a-18" zoom-min="18"><symbol src="file:/trailmarks/0x333A.png"/></rule>
+<rule e="node" k="Type" v="0x333b-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x333b.png"/></rule>
+<rule e="node" k="Type" v="0x333b-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x333b.png"/></rule>
+<rule e="node" k="Type" v="0x333b-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x333b.png"/></rule>
+<rule e="node" k="Type" v="0x333b-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x333b.png"/></rule>
+<rule e="node" k="Type" v="0x333b-18" zoom-min="18"><symbol src="file:/trailmarks/0x333B.png"/></rule>
+<rule e="node" k="Type" v="0x333c-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x333c.png"/></rule>
+<rule e="node" k="Type" v="0x333c-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x333c.png"/></rule>
+<rule e="node" k="Type" v="0x333c-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x333c.png"/></rule>
+<rule e="node" k="Type" v="0x333c-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x333c.png"/></rule>
+<rule e="node" k="Type" v="0x333c-18" zoom-min="18"><symbol src="file:/trailmarks/0x333C.png"/></rule>
+<rule e="node" k="Type" v="0x333d-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x333d.png"/></rule>
+<rule e="node" k="Type" v="0x333d-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x333d.png"/></rule>
+<rule e="node" k="Type" v="0x333d-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x333d.png"/></rule>
+<rule e="node" k="Type" v="0x333d-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x333d.png"/></rule>
+<rule e="node" k="Type" v="0x333d-18" zoom-min="18"><symbol src="file:/trailmarks/0x333D.png"/></rule>
+<rule e="node" k="Type" v="0x333e-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x333e.png"/></rule>
+<rule e="node" k="Type" v="0x333e-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x333e.png"/></rule>
+<rule e="node" k="Type" v="0x333e-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x333e.png"/></rule>
+<rule e="node" k="Type" v="0x333e-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x333e.png"/></rule>
+<rule e="node" k="Type" v="0x333e-18" zoom-min="18"><symbol src="file:/trailmarks/0x333E.png"/></rule>
+<rule e="node" k="Type" v="0x333f-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x333f.png"/></rule>
+<rule e="node" k="Type" v="0x333f-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x333f.png"/></rule>
+<rule e="node" k="Type" v="0x333f-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x333f.png"/></rule>
+<rule e="node" k="Type" v="0x333f-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x333f.png"/></rule>
+<rule e="node" k="Type" v="0x333f-18" zoom-min="18"><symbol src="file:/trailmarks/0x333F.png"/></rule>
+<rule e="node" k="Type" v="0x3520-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3520.png"/></rule>
+<rule e="node" k="Type" v="0x3520-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3520.png"/></rule>
+<rule e="node" k="Type" v="0x3520-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3520.png"/></rule>
+<rule e="node" k="Type" v="0x3520-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3520.png"/></rule>
+<rule e="node" k="Type" v="0x3520-18" zoom-min="18"><symbol src="file:/trailmarks/0x3520.png"/></rule>
+<rule e="node" k="Type" v="0x3521-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3521.png"/></rule>
+<rule e="node" k="Type" v="0x3521-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3521.png"/></rule>
+<rule e="node" k="Type" v="0x3521-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3521.png"/></rule>
+<rule e="node" k="Type" v="0x3521-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3521.png"/></rule>
+<rule e="node" k="Type" v="0x3521-18" zoom-min="18"><symbol src="file:/trailmarks/0x3521.png"/></rule>
+<rule e="node" k="Type" v="0x3522-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3522.png"/></rule>
+<rule e="node" k="Type" v="0x3522-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3522.png"/></rule>
+<rule e="node" k="Type" v="0x3522-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3522.png"/></rule>
+<rule e="node" k="Type" v="0x3522-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3522.png"/></rule>
+<rule e="node" k="Type" v="0x3522-18" zoom-min="18"><symbol src="file:/trailmarks/0x3522.png"/></rule>
+<rule e="node" k="Type" v="0x3523-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3523.png"/></rule>
+<rule e="node" k="Type" v="0x3523-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3523.png"/></rule>
+<rule e="node" k="Type" v="0x3523-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3523.png"/></rule>
+<rule e="node" k="Type" v="0x3523-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3523.png"/></rule>
+<rule e="node" k="Type" v="0x3523-18" zoom-min="18"><symbol src="file:/trailmarks/0x3523.png"/></rule>
+<rule e="node" k="Type" v="0x3524-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3524.png"/></rule>
+<rule e="node" k="Type" v="0x3524-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3524.png"/></rule>
+<rule e="node" k="Type" v="0x3524-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3524.png"/></rule>
+<rule e="node" k="Type" v="0x3524-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3524.png"/></rule>
+<rule e="node" k="Type" v="0x3524-18" zoom-min="18"><symbol src="file:/trailmarks/0x3524.png"/></rule>
+<rule e="node" k="Type" v="0x3525-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3525.png"/></rule>
+<rule e="node" k="Type" v="0x3525-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3525.png"/></rule>
+<rule e="node" k="Type" v="0x3525-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3525.png"/></rule>
+<rule e="node" k="Type" v="0x3525-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3525.png"/></rule>
+<rule e="node" k="Type" v="0x3525-18" zoom-min="18"><symbol src="file:/trailmarks/0x3525.png"/></rule>
+<rule e="node" k="Type" v="0x3526-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3526.png"/></rule>
+<rule e="node" k="Type" v="0x3526-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3526.png"/></rule>
+<rule e="node" k="Type" v="0x3526-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3526.png"/></rule>
+<rule e="node" k="Type" v="0x3526-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3526.png"/></rule>
+<rule e="node" k="Type" v="0x3526-18" zoom-min="18"><symbol src="file:/trailmarks/0x3526.png"/></rule>
+<rule e="node" k="Type" v="0x3527-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3527.png"/></rule>
+<rule e="node" k="Type" v="0x3527-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3527.png"/></rule>
+<rule e="node" k="Type" v="0x3527-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3527.png"/></rule>
+<rule e="node" k="Type" v="0x3527-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3527.png"/></rule>
+<rule e="node" k="Type" v="0x3527-18" zoom-min="18"><symbol src="file:/trailmarks/0x3527.png"/></rule>
+<rule e="node" k="Type" v="0x3528-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3528.png"/></rule>
+<rule e="node" k="Type" v="0x3528-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3528.png"/></rule>
+<rule e="node" k="Type" v="0x3528-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3528.png"/></rule>
+<rule e="node" k="Type" v="0x3528-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3528.png"/></rule>
+<rule e="node" k="Type" v="0x3528-18" zoom-min="18"><symbol src="file:/trailmarks/0x3528.png"/></rule>
+<rule e="node" k="Type" v="0x3529-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3529.png"/></rule>
+<rule e="node" k="Type" v="0x3529-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3529.png"/></rule>
+<rule e="node" k="Type" v="0x3529-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3529.png"/></rule>
+<rule e="node" k="Type" v="0x3529-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3529.png"/></rule>
+<rule e="node" k="Type" v="0x3529-18" zoom-min="18"><symbol src="file:/trailmarks/0x3529.png"/></rule>
+<rule e="node" k="Type" v="0x352a-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x352a.png"/></rule>
+<rule e="node" k="Type" v="0x352a-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x352a.png"/></rule>
+<rule e="node" k="Type" v="0x352a-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x352a.png"/></rule>
+<rule e="node" k="Type" v="0x352a-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x352a.png"/></rule>
+<rule e="node" k="Type" v="0x352a-18" zoom-min="18"><symbol src="file:/trailmarks/0x352a.png"/></rule>
+<rule e="node" k="Type" v="0x352b-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x352b.png"/></rule>
+<rule e="node" k="Type" v="0x352b-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x352b.png"/></rule>
+<rule e="node" k="Type" v="0x352b-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x352b.png"/></rule>
+<rule e="node" k="Type" v="0x352b-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x352b.png"/></rule>
+<rule e="node" k="Type" v="0x352b-18" zoom-min="18"><symbol src="file:/trailmarks/0x352b.png"/></rule>
+<rule e="node" k="Type" v="0x352c-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x352c.png"/></rule>
+<rule e="node" k="Type" v="0x352c-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x352c.png"/></rule>
+<rule e="node" k="Type" v="0x352c-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x352c.png"/></rule>
+<rule e="node" k="Type" v="0x352c-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x352c.png"/></rule>
+<rule e="node" k="Type" v="0x352c-18" zoom-min="18"><symbol src="file:/trailmarks/0x352c.png"/></rule>
+<rule e="node" k="Type" v="0x352d-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x352d.png"/></rule>
+<rule e="node" k="Type" v="0x352d-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x352d.png"/></rule>
+<rule e="node" k="Type" v="0x352d-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x352d.png"/></rule>
+<rule e="node" k="Type" v="0x352d-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x352d.png"/></rule>
+<rule e="node" k="Type" v="0x352d-18" zoom-min="18"><symbol src="file:/trailmarks/0x352d.png"/></rule>
+<rule e="node" k="Type" v="0x352e-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x352e.png"/></rule>
+<rule e="node" k="Type" v="0x352e-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x352e.png"/></rule>
+<rule e="node" k="Type" v="0x352e-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x352e.png"/></rule>
+<rule e="node" k="Type" v="0x352e-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x352e.png"/></rule>
+<rule e="node" k="Type" v="0x352e-18" zoom-min="18"><symbol src="file:/trailmarks/0x352e.png"/></rule>
+<rule e="node" k="Type" v="0x352f-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x352f.png"/></rule>
+<rule e="node" k="Type" v="0x352f-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x352f.png"/></rule>
+<rule e="node" k="Type" v="0x352f-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x352f.png"/></rule>
+<rule e="node" k="Type" v="0x352f-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x352f.png"/></rule>
+<rule e="node" k="Type" v="0x352f-18" zoom-min="18"><symbol src="file:/trailmarks/0x352f.png"/></rule>
+<rule e="node" k="Type" v="0x3530-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3530.png"/></rule>
+<rule e="node" k="Type" v="0x3530-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3530.png"/></rule>
+<rule e="node" k="Type" v="0x3530-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3530.png"/></rule>
+<rule e="node" k="Type" v="0x3530-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3530.png"/></rule>
+<rule e="node" k="Type" v="0x3530-18" zoom-min="18"><symbol src="file:/trailmarks/0x3530.png"/></rule>
+<rule e="node" k="Type" v="0x3531-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3531.png"/></rule>
+<rule e="node" k="Type" v="0x3531-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3531.png"/></rule>
+<rule e="node" k="Type" v="0x3531-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3531.png"/></rule>
+<rule e="node" k="Type" v="0x3531-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3531.png"/></rule>
+<rule e="node" k="Type" v="0x3531-18" zoom-min="18"><symbol src="file:/trailmarks/0x3531.png"/></rule>
+<rule e="node" k="Type" v="0x3532-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3532.png"/></rule>
+<rule e="node" k="Type" v="0x3532-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3532.png"/></rule>
+<rule e="node" k="Type" v="0x3532-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3532.png"/></rule>
+<rule e="node" k="Type" v="0x3532-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3532.png"/></rule>
+<rule e="node" k="Type" v="0x3532-18" zoom-min="18"><symbol src="file:/trailmarks/0x3532.png"/></rule>
+<rule e="node" k="Type" v="0x3533-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3533.png"/></rule>
+<rule e="node" k="Type" v="0x3533-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3533.png"/></rule>
+<rule e="node" k="Type" v="0x3533-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3533.png"/></rule>
+<rule e="node" k="Type" v="0x3533-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3533.png"/></rule>
+<rule e="node" k="Type" v="0x3533-18" zoom-min="18"><symbol src="file:/trailmarks/0x3533.png"/></rule>
+<rule e="node" k="Type" v="0x3534-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3534.png"/></rule>
+<rule e="node" k="Type" v="0x3534-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3534.png"/></rule>
+<rule e="node" k="Type" v="0x3534-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3534.png"/></rule>
+<rule e="node" k="Type" v="0x3534-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3534.png"/></rule>
+<rule e="node" k="Type" v="0x3534-18" zoom-min="18"><symbol src="file:/trailmarks/0x3534.png"/></rule>
+<rule e="node" k="Type" v="0x3535-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3535.png"/></rule>
+<rule e="node" k="Type" v="0x3535-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3535.png"/></rule>
+<rule e="node" k="Type" v="0x3535-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3535.png"/></rule>
+<rule e="node" k="Type" v="0x3535-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3535.png"/></rule>
+<rule e="node" k="Type" v="0x3535-18" zoom-min="18"><symbol src="file:/trailmarks/0x3535.png"/></rule>
+<rule e="node" k="Type" v="0x3536-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3536.png"/></rule>
+<rule e="node" k="Type" v="0x3536-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3536.png"/></rule>
+<rule e="node" k="Type" v="0x3536-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3536.png"/></rule>
+<rule e="node" k="Type" v="0x3536-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3536.png"/></rule>
+<rule e="node" k="Type" v="0x3536-18" zoom-min="18"><symbol src="file:/trailmarks/0x3536.png"/></rule>
+<rule e="node" k="Type" v="0x3537-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3537.png"/></rule>
+<rule e="node" k="Type" v="0x3537-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3537.png"/></rule>
+<rule e="node" k="Type" v="0x3537-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3537.png"/></rule>
+<rule e="node" k="Type" v="0x3537-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3537.png"/></rule>
+<rule e="node" k="Type" v="0x3537-18" zoom-min="18"><symbol src="file:/trailmarks/0x3537.png"/></rule>
+<rule e="node" k="Type" v="0x3538-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3538.png"/></rule>
+<rule e="node" k="Type" v="0x3538-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3538.png"/></rule>
+<rule e="node" k="Type" v="0x3538-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3538.png"/></rule>
+<rule e="node" k="Type" v="0x3538-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3538.png"/></rule>
+<rule e="node" k="Type" v="0x3538-18" zoom-min="18"><symbol src="file:/trailmarks/0x3538.png"/></rule>
+<rule e="node" k="Type" v="0x3539-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3539.png"/></rule>
+<rule e="node" k="Type" v="0x3539-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3539.png"/></rule>
+<rule e="node" k="Type" v="0x3539-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3539.png"/></rule>
+<rule e="node" k="Type" v="0x3539-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3539.png"/></rule>
+<rule e="node" k="Type" v="0x3539-18" zoom-min="18"><symbol src="file:/trailmarks/0x3539.png"/></rule>
+<rule e="node" k="Type" v="0x353a-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x353a.png"/></rule>
+<rule e="node" k="Type" v="0x353a-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x353a.png"/></rule>
+<rule e="node" k="Type" v="0x353a-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x353a.png"/></rule>
+<rule e="node" k="Type" v="0x353a-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x353a.png"/></rule>
+<rule e="node" k="Type" v="0x353a-18" zoom-min="18"><symbol src="file:/trailmarks/0x353a.png"/></rule>
+<rule e="node" k="Type" v="0x353b-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x353b.png"/></rule>
+<rule e="node" k="Type" v="0x353b-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x353b.png"/></rule>
+<rule e="node" k="Type" v="0x353b-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x353b.png"/></rule>
+<rule e="node" k="Type" v="0x353b-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x353b.png"/></rule>
+<rule e="node" k="Type" v="0x353b-18" zoom-min="18"><symbol src="file:/trailmarks/0x353b.png"/></rule>
+<rule e="node" k="Type" v="0x353c-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x353c.png"/></rule>
+<rule e="node" k="Type" v="0x353c-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x353c.png"/></rule>
+<rule e="node" k="Type" v="0x353c-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x353c.png"/></rule>
+<rule e="node" k="Type" v="0x353c-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x353c.png"/></rule>
+<rule e="node" k="Type" v="0x353c-18" zoom-min="18"><symbol src="file:/trailmarks/0x353c.png"/></rule>
+<rule e="node" k="Type" v="0x353d-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x353d.png"/></rule>
+<rule e="node" k="Type" v="0x353d-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x353d.png"/></rule>
+<rule e="node" k="Type" v="0x353d-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x353d.png"/></rule>
+<rule e="node" k="Type" v="0x353d-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x353d.png"/></rule>
+<rule e="node" k="Type" v="0x353d-18" zoom-min="18"><symbol src="file:/trailmarks/0x353d.png"/></rule>
+<rule e="node" k="Type" v="0x353e-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x353e.png"/></rule>
+<rule e="node" k="Type" v="0x353e-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x353e.png"/></rule>
+<rule e="node" k="Type" v="0x353e-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x353e.png"/></rule>
+<rule e="node" k="Type" v="0x353e-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x353e.png"/></rule>
+<rule e="node" k="Type" v="0x353e-18" zoom-min="18"><symbol src="file:/trailmarks/0x353e.png"/></rule>
+<rule e="node" k="Type" v="0x353f-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x353f.png"/></rule>
+<rule e="node" k="Type" v="0x353f-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x353f.png"/></rule>
+<rule e="node" k="Type" v="0x353f-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x353f.png"/></rule>
+<rule e="node" k="Type" v="0x353f-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x353f.png"/></rule>
+<rule e="node" k="Type" v="0x353f-18" zoom-min="18"><symbol src="file:/trailmarks/0x353f.png"/></rule>
+<rule e="node" k="Type" v="0x3720-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3720.png"/></rule>
+<rule e="node" k="Type" v="0x3720-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3720.png"/></rule>
+<rule e="node" k="Type" v="0x3720-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3720.png"/></rule>
+<rule e="node" k="Type" v="0x3720-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3720.png"/></rule>
+<rule e="node" k="Type" v="0x3720-18" zoom-min="18"><symbol src="file:/trailmarks/0x3720.png"/></rule>
+<rule e="node" k="Type" v="0x3721-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3721.png"/></rule>
+<rule e="node" k="Type" v="0x3721-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3721.png"/></rule>
+<rule e="node" k="Type" v="0x3721-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3721.png"/></rule>
+<rule e="node" k="Type" v="0x3721-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3721.png"/></rule>
+<rule e="node" k="Type" v="0x3721-18" zoom-min="18"><symbol src="file:/trailmarks/0x3721.png"/></rule>
+<rule e="node" k="Type" v="0x3723-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3723.png"/></rule>
+<rule e="node" k="Type" v="0x3723-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3723.png"/></rule>
+<rule e="node" k="Type" v="0x3723-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3723.png"/></rule>
+<rule e="node" k="Type" v="0x3723-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3723.png"/></rule>
+<rule e="node" k="Type" v="0x3723-18" zoom-min="18"><symbol src="file:/trailmarks/0x3723.png"/></rule>
+<rule e="node" k="Type" v="0x3724-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3724.png"/></rule>
+<rule e="node" k="Type" v="0x3724-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3724.png"/></rule>
+<rule e="node" k="Type" v="0x3724-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3724.png"/></rule>
+<rule e="node" k="Type" v="0x3724-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3724.png"/></rule>
+<rule e="node" k="Type" v="0x3724-18" zoom-min="18"><symbol src="file:/trailmarks/0x3724.png"/></rule>
+<rule e="node" k="Type" v="0x3725-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3725.png"/></rule>
+<rule e="node" k="Type" v="0x3725-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3725.png"/></rule>
+<rule e="node" k="Type" v="0x3725-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3725.png"/></rule>
+<rule e="node" k="Type" v="0x3725-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3725.png"/></rule>
+<rule e="node" k="Type" v="0x3725-18" zoom-min="18"><symbol src="file:/trailmarks/0x3725.png"/></rule>
+<rule e="node" k="Type" v="0x3727-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3727.png"/></rule>
+<rule e="node" k="Type" v="0x3727-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3727.png"/></rule>
+<rule e="node" k="Type" v="0x3727-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3727.png"/></rule>
+<rule e="node" k="Type" v="0x3727-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3727.png"/></rule>
+<rule e="node" k="Type" v="0x3727-18" zoom-min="18"><symbol src="file:/trailmarks/0x3727.png"/></rule>
+<rule e="node" k="Type" v="0x3728-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3728.png"/></rule>
+<rule e="node" k="Type" v="0x3728-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3728.png"/></rule>
+<rule e="node" k="Type" v="0x3728-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3728.png"/></rule>
+<rule e="node" k="Type" v="0x3728-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3728.png"/></rule>
+<rule e="node" k="Type" v="0x3728-18" zoom-min="18"><symbol src="file:/trailmarks/0x3728.png"/></rule>
+<rule e="node" k="Type" v="0x3729-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3729.png"/></rule>
+<rule e="node" k="Type" v="0x3729-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3729.png"/></rule>
+<rule e="node" k="Type" v="0x3729-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3729.png"/></rule>
+<rule e="node" k="Type" v="0x3729-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3729.png"/></rule>
+<rule e="node" k="Type" v="0x3729-18" zoom-min="18"><symbol src="file:/trailmarks/0x3729.png"/></rule>
+<rule e="node" k="Type" v="0x372b-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x372b.png"/></rule>
+<rule e="node" k="Type" v="0x372b-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x372b.png"/></rule>
+<rule e="node" k="Type" v="0x372b-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x372b.png"/></rule>
+<rule e="node" k="Type" v="0x372b-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x372b.png"/></rule>
+<rule e="node" k="Type" v="0x372b-18" zoom-min="18"><symbol src="file:/trailmarks/0x372b.png"/></rule>
+<rule e="node" k="Type" v="0x372c-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x372c.png"/></rule>
+<rule e="node" k="Type" v="0x372c-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x372c.png"/></rule>
+<rule e="node" k="Type" v="0x372c-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x372c.png"/></rule>
+<rule e="node" k="Type" v="0x372c-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x372c.png"/></rule>
+<rule e="node" k="Type" v="0x372c-18" zoom-min="18"><symbol src="file:/trailmarks/0x372c.png"/></rule>
+<rule e="node" k="Type" v="0x372d-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x372d.png"/></rule>
+<rule e="node" k="Type" v="0x372d-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x372d.png"/></rule>
+<rule e="node" k="Type" v="0x372d-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x372d.png"/></rule>
+<rule e="node" k="Type" v="0x372d-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x372d.png"/></rule>
+<rule e="node" k="Type" v="0x372d-18" zoom-min="18"><symbol src="file:/trailmarks/0x372d.png"/></rule>
+<rule e="node" k="Type" v="0x372f-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x372f.png"/></rule>
+<rule e="node" k="Type" v="0x372f-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x372f.png"/></rule>
+<rule e="node" k="Type" v="0x372f-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x372f.png"/></rule>
+<rule e="node" k="Type" v="0x372f-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x372f.png"/></rule>
+<rule e="node" k="Type" v="0x372f-18" zoom-min="18"><symbol src="file:/trailmarks/0x372f.png"/></rule>
+<rule e="node" k="Type" v="0x3730-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3730.png"/></rule>
+<rule e="node" k="Type" v="0x3730-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3730.png"/></rule>
+<rule e="node" k="Type" v="0x3730-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3730.png"/></rule>
+<rule e="node" k="Type" v="0x3730-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3730.png"/></rule>
+<rule e="node" k="Type" v="0x3730-18" zoom-min="18"><symbol src="file:/trailmarks/0x3730.png"/></rule>
+<rule e="node" k="Type" v="0x3731-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3731.png"/></rule>
+<rule e="node" k="Type" v="0x3731-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3731.png"/></rule>
+<rule e="node" k="Type" v="0x3731-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3731.png"/></rule>
+<rule e="node" k="Type" v="0x3731-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3731.png"/></rule>
+<rule e="node" k="Type" v="0x3731-18" zoom-min="18"><symbol src="file:/trailmarks/0x3731.png"/></rule>
+<rule e="node" k="Type" v="0x3733-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x3733.png"/></rule>
+<rule e="node" k="Type" v="0x3733-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x3733.png"/></rule>
+<rule e="node" k="Type" v="0x3733-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x3733.png"/></rule>
+<rule e="node" k="Type" v="0x3733-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x3733.png"/></rule>
+<rule e="node" k="Type" v="0x3733-18" zoom-min="18"><symbol src="file:/trailmarks/0x3733.png"/></rule>
+<rule e="node" k="Type" v="0x373f-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x373f.png"/></rule>
+<rule e="node" k="Type" v="0x373f-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x373f.png"/></rule>
+<rule e="node" k="Type" v="0x373f-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x373f.png"/></rule>
+<rule e="node" k="Type" v="0x373f-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x373f.png"/></rule>
+<rule e="node" k="Type" v="0x373f-18" zoom-min="18"><symbol src="file:/trailmarks/0x373f.png"/></rule>
+<rule e="node" k="Type" v="0x373e-14" zoom-min="14" zoom-max="14"><symbol src="file:/trailmarks/0x373e.png"/></rule>
+<rule e="node" k="Type" v="0x373e-15" zoom-min="15" zoom-max="15"><symbol src="file:/trailmarks/0x373e.png"/></rule>
+<rule e="node" k="Type" v="0x373e-16" zoom-min="16" zoom-max="16"><symbol src="file:/trailmarks/0x373e.png"/></rule>
+<rule e="node" k="Type" v="0x373e-17" zoom-min="17" zoom-max="17"><symbol src="file:/trailmarks/0x373e.png"/></rule>
+<rule e="node" k="Type" v="0x373e-18" zoom-min="18"><symbol src="file:/trailmarks/0x373e.png"/></rule>
+</rule>		
+
+
+		<!-- amenity -->
+		<rule e="node" k="amenity" v="*">
+			<rule e="node" k="amenity" v="atm" zoom-min="17">
+				<symbol src="file:/symbols/atm.png" />
+			</rule>
+			<rule e="node" k="amenity" v="bank" zoom-min="17">
+				<symbol src="file:/symbols/bank.png" />
+			</rule>
+			<rule e="node" k="amenity" v="bench" zoom-min="17">
+				<symbol src="file:/symbols/bench.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="bicycle_rental" zoom-min="17">
+				<symbol src="file:/symbols/bicycle_rental.png" />
+			</rule>
+			<rule e="node" k="amenity" v="bus_station" zoom-min="17">
+				<symbol src="file:/symbols/bus_sta.png" />
+			</rule>
+			<rule e="node" k="amenity" v="cafe" zoom-min="17">
+				<symbol src="file:/symbols/cafe.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="cinema" zoom-min="17">
+				<symbol src="file:/symbols/cinema.png" />
+			</rule>
+ 			<rule e="node" k="amenity" v="drinking_water" zoom-min="16">
+ 				<symbol src="file:/symbols/drinking_water.png" />
+ 			</rule>
+			<rule e="node" k="amenity" v="fast_food" zoom-min="17">
+				<symbol src="file:/symbols/fastfood.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="ferry_terminal" zoom-min="17">
+				<symbol src="file:/symbols/ferry_term.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="fire_station" zoom-min="17">
+				<circle r="5.00" fill="#FF0000" stroke="#ffffff" stroke-width="1.50" />
+			</rule>
+			<rule e="node" k="amenity" v="fountain" zoom-min="17">
+				<symbol src="file:/symbols/fountain.png" />
+			</rule>
+			<rule e="node" k="amenity" v="fuel" zoom-min="15">
+				<symbol src="file:/symbols/petrolStation.png" />
+			</rule>
+			<rule e="node" k="amenity" v="hospital" zoom-min="15">
+				<symbol src="file:/symbols/hospital.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="first_aid" zoom-min="15">
+				<symbol src="file:/symbols/first_aid.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="kindergarten" zoom-min="17">
+				<symbol src="file:/symbols/kindergarten.png" />
+			</rule>
+			<rule e="node" k="amenity" v="library" zoom-min="17">
+				<symbol src="file:/symbols/library.png" />
+				<caption k="name" dy="-18" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="parking" zoom-min="17">
+				<symbol src="file:/symbols/parking.png" />
+			</rule>
+			<rule e="node" k="amenity" v="pharmacy" zoom-min="17">
+				<symbol src="file:/symbols/pharmacy.png" />
+			</rule>
+			<rule e="node" k="amenity" v="police" zoom-min="16">
+				<symbol src="file:/symbols/police.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="place_of_worship" zoom-min="15">
+				<symbol src="file:/symbols/church.png" />
+				<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="post_box" zoom-min="18">
+				<symbol src="file:/symbols/postbox.png" />
+			</rule>
+			<rule e="node" k="amenity" v="post_office" zoom-min="16">
+				<symbol src="file:/symbols/postoffice.png" />
+			</rule>
+			<rule e="node" k="amenity" v="pub" zoom-min="17">
+				<symbol src="file:/symbols/bar.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="bar" zoom-min="17">
+				<symbol src="file:/symbols/bar.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="recycling" zoom-min="17">
+				<symbol src="file:/symbols/recycling.png" />
+			</rule>
+			<rule e="node" k="amenity" v="restaurant" zoom-min="16">
+				<symbol src="file:/symbols/restaurant.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="school|university|college" zoom-min="16">
+				<symbol src="file:/symbols/school.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.0" />
+			</rule>
+			<rule e="node" k="amenity" v="shelter" zoom-min="16">
+				<symbol src="file:/symbols/shelter.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="telephone" zoom-min="17">
+				<symbol src="file:/symbols/telephone.png" />
+			</rule>
+			<rule e="node" k="amenity" v="theatre" zoom-min="16">
+				<symbol src="file:/symbols/theatre.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="toilets" zoom-min="16">
+				<symbol src="file:/symbols/toilets.png" />
+			</rule>
+			<rule e="node" k="amenity" v="hunting_stand" zoom-min="16">
+				<symbol src="file:/symbols/hunting_stand.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="amenity" v="gym" zoom-min="16">
+				<symbol src="file:/symbols/gym.png" />
+				<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+
+			<rule e="node" k="amenity" v="game_feeding" zoom-min="16">
+				<symbol src="file:/symbols/wildlife.png" />
+			</rule>
+			<rule e="node" k="amenity" v="watering_place" zoom-min="16">
+				<symbol src="file:/symbols/watering_place.png" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="18">
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+
+
+		<!-- landuse -->
+			<rule e="node" k="landuse" v="military" zoom-min="16">
+				<symbol src="file:/symbols/military.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+
+		
+		<!-- barrier -->
+		<rule e="node" k="barrier" v="bollard">
+			<circle r="1.50" fill="#707070" />
+		</rule>
+		<rule e="node" k="barrier" v="entrance" zoom-min="16">
+				<symbol src="file:/symbols/entrance.png" />
+		</rule>
+		<rule e="node" k="barrier" v="gate" zoom-min="17">
+				<symbol src="file:/symbols/gate.png" />
+		</rule>
+		<rule e="node" k="barrier" v="border_control" zoom-min="17">
+				<symbol src="file:/symbols/border_control.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+
+
+
+
+		<!-- highway -->
+		<rule e="node" k="highway" v="*">
+			<rule e="node" k="highway" v="bus_stop" zoom-min="15">
+				<symbol src="file:/symbols/bus_sta.png" />
+				<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="highway" v="traffic_signals" zoom-min="18">
+				<symbol src="file:/symbols/traffic_signal.png" />
+			</rule>
+			<rule e="node" k="highway" v="turning_circle">
+				<circle r="1.40" scale-radius="true" fill="#ffffff" />
+			</rule>
+		</rule>
+
+
+
+
+		<!-- historic -->
+		<rule e="node" k="historic" v="ruins" zoom-min="16">
+			<symbol src="file:/symbols/ruin.png" />
+			<caption k="name" dy="-13" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="historic" v="castle" zoom-min="16">
+			<symbol src="file:/symbols/castle.png" />
+			<caption k="name" dy="-13" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="historic" v="monument" zoom-min="16">
+			<symbol src="file:/symbols/monument.png" />
+			<caption k="name" dy="-13" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="historic" v="tomb" zoom-min="16">
+				<symbol src="file:/symbols/grave_yard.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="historic" v="memorial" zoom-min="16">
+			<symbol src="file:/symbols/memorial.png" />
+			<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+			stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="historic" v="wayside_cross" zoom-min="16">
+			<symbol src="file:/symbols/wayside_cross.png" />
+			<caption k="name" dy="-13" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+			stroke-width="2.00" />
+		</rule>
+
+
+		<!-- house numbers -->
+		<rule e="node" k="addr:housenumber" v="*" zoom-min="18">
+			<caption k="addr:housenumber" font-style="bold" font-size="10" fill="#606060" stroke="#ffffff"
+				stroke-width="2.00" />
+		</rule>
+
+
+		<!-- leisure, office -->
+		<rule e="node" k="leisure" v="playground" zoom-min="17">
+			<symbol src="file:/symbols/playground.png" />
+		</rule>
+		<rule e="node" k="leisure" v="garden" zoom-min="17">
+			<symbol src="file:/symbols/florist.png" />
+			<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="leisure" v="water_park|swimming_pool" zoom-min="16">
+			<symbol src="file:/symbols/water_park.png" />
+			<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="leisure" v="fishing" zoom-min="16">
+			<symbol src="file:/symbols/fishing.png" />
+			<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="leisure" v="pitch" zoom-min="16">
+			<symbol src="file:/symbols/soccer.png" />
+			<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="office" v="government" zoom-min="16">
+			<symbol src="file:/symbols/office.png" />
+			<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+		</rule>
+		
+		<!-- tower:type -->
+			<rule e="node" k="tower:type" v="observation" zoom-min="15">
+				<symbol src="file:/symbols/observation.png" />
+			<caption k="name" dy="-18" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+						
+		<!-- building -->
+			<rule e="node" k="building" v="detached" zoom-min="16">
+				<symbol src="file:/symbols/building.png" />
+			<caption k="name" dy="-12" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="building" v="chapel" zoom-min="15">
+				<symbol src="file:/symbols/chapel.png" />
+			<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+
+
+
+		<!-- man_made -->
+		<rule e="node" k="man_made" v="windmill" zoom-min="17">
+			<symbol src="file:/symbols/windmill.png" />
+		<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+			stroke-width="2.00" />	
+		</rule>
+		<rule e="node" k="man_made" v="adit|mineshaft" zoom-min="16">
+			<symbol src="file:/symbols/mine.png" />
+			<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+			stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="man_made" v="water_well" zoom-min="16">
+			<symbol src="file:/symbols/drinking_water.png" />
+			<caption k="name" dy="-16" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+			stroke-width="2.00" />
+		</rule>
+		<rule e="node" k="man_made" v="water_tower" zoom-min="16">
+				<symbol src="file:/symbols/watertower.png" />
+			<caption k="name" dy="-18" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		<rule e="node" k="man_made" v="lighthouse" zoom-min="16">
+				<symbol src="file:/symbols/lighthouse.png" />
+			<caption k="name" dy="-18" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+
+		<rule e="node" k="man_made" v="tower|works" zoom-min="15">
+				<symbol src="file:/symbols/tower.png" />
+			<rule e="node" k="*" v="*" zoom-min="16">
+				<caption k="name" dy="-18" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+
+
+		<!-- natural -->
+		<rule e="node" k="natural" v="*">
+			<rule e="node" k="natural" v="cave_entrance" zoom-min="15">
+				<symbol src="file:/symbols/cave_entrance.png" />
+			<caption k="name" dy="-13" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="spring" zoom-min="12">
+				<symbol src="file:/symbols/spring.png" />
+			<caption k="name" dy="-15" font-style="bold_italic" font-size="9" fill="#115DFF" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="bay" zoom-min="12">
+			<caption k="name" font-style="bold_italic" font-size="12" fill="#1A8DFF" stroke="#ffffff"
+			stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="water" zoom-min="12">
+			<circle r="4.00" fill="#b5d6f1" stroke="#1A8DFF" stroke-width="1.50" />
+			<caption k="name" dy="-13" font-style="bold_italic" font-size="9" fill="#1A8DFF" stroke="#ffffff"
+			stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="wetland" zoom-min="16">
+				<symbol src="file:/symbols/wetland.png" />
+			<caption k="name" dy="-14" font-style="bold_italic" font-size="9" fill="#115DFF" stroke="#ffffff"
+			stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="peak" zoom-min="12">
+				<symbol src="file:/symbols/peak.png" />
+				<caption k="ele" dy="19" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			<caption k="name" dy="-13" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="cliff" zoom-min="12">
+				<symbol src="file:/symbols/cliff.png" />
+			<caption k="name" dy="-13" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="sinkhole" zoom-min="15">
+				<symbol src="file:/symbols/sinkhole.png" />
+			<caption k="name" dy="-13" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="tree" zoom-min="16">
+				<symbol src="file:/symbols/tree.png" />
+			<caption k="name" dy="-18" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="beach" zoom-min="16">
+			<symbol src="file:/symbols/water_park.png" />
+			<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="natural" v="volcano" zoom-min="12">
+				<symbol src="file:/symbols/vulcan.png" />
+			</rule>
+		</rule>
+		
+		<!-- waterway -->
+			<rule e="node" k="waterway" v="lock_gate" zoom-min="16">
+				<symbol src="file:/symbols/dam.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="waterway" v="waterfall" zoom-min="16">
+				<symbol src="file:/symbols/waterfall.png" />
+				<caption k="name" dy="-15" font-style="bold_italic" font-size="9" fill="#115DFF" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			
+		<!-- ford -->
+			<rule e="node" k="ford" v="yes" zoom-min="17">
+				<symbol src="file:/symbols/ford.png" />
+			<caption k="name" dy="-13" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			
+		<!-- speedcams -->
+			<rule e="node" k="highway" v="speed_camera" zoom-min="17">
+				<symbol src="file:/symbols/speedcam.png" />
+			<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>	
+			
+		<!-- checkpoint -->
+			<rule e="node" k="checkpoint" v="hiking" zoom-min="17">
+				<symbol src="file:/symbols/checkpoint.png" />
+			<caption k="name" dy="-20" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+
+			
+		<!-- mountain pass -->
+			<rule e="node" k="mountain_pass" v="yes" zoom-min="15">
+				<symbol src="file:/symbols/pass.png" />
+			<caption k="ele" dy="19" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />	
+			<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			
+		
+		<!-- bridge -->
+			<rule e="node" k="bridge" v="*" zoom-min="15">
+				<symbol src="file:/symbols/bridge.png" />
+				<caption k="name" dy="-10" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+
+		<!-- place -->
+		<rule e="node" k="place" v="*">
+			<rule e="node" k="place" v="suburb|town|village" zoom-min="8">
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="place" v="hamlet|farm" zoom-min="13">
+				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="place" v="island" zoom-min="10">
+				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="place" v="city" zoom-max="14">
+				<caption k="name" font-style="bold" font-size="24" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>			
+			<rule e="node" k="place" v="locality" zoom-min="14">
+				<caption k="name" font-style="bold_italic" font-family="serif" font-size="9" fill="#6E6E6E" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="place" v="country" zoom-max="6">
+				<caption k="name" font-style="bold" font-size="24" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+		
+
+		<!-- railway -->
+		<rule e="node" k="railway" v="*">
+			<rule e="node" k="railway" v="crossing|level_crossing" zoom-min="16">
+				<symbol src="file:/symbols/railway-crossing.png" />
+			</rule>
+			<rule e="node" k="railway" v="station" zoom-min="14">
+				<circle r="6.00" fill="#ec2d2d" stroke="#ffffff" stroke-width="1.50" />
+				<caption k="name" dy="-10" font-style="bold" font-size="11" fill="#ec2d2d" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="railway" v="halt|tram_stop" zoom-min="17">
+				<circle r="4.00" fill="#ec2d2d" stroke="#ffffff" stroke-width="1.50" />
+				<caption k="name" dy="-15" font-style="bold" font-size="10" fill="#ec2d2d" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+
+
+		<!-- shop -->
+		<rule e="node" k="shop" v="*">
+			<rule e="node" k="shop" v="bakery" zoom-min="16">
+				<rule e="node" k="*" v="*" zoom-min="19">
+					<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+						stroke-width="2.00" />
+				</rule>
+				<symbol src="file:/symbols/bakery.png" />
+			</rule>
+			<rule e="node" k="shop" v="florist" zoom-min="17">
+				<rule e="node" k="*" v="*" zoom-min="19">
+					<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+						stroke-width="2.00" />
+				</rule>
+				<symbol src="file:/symbols/florist.png" />
+			</rule>
+			<rule e="node" k="shop" v="supermarket|organic|mall" zoom-min="15">
+				<rule e="node" k="*" v="*" zoom-min="16">
+					<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+						stroke-width="2.00" />
+				</rule>
+				<symbol src="file:/symbols/supermarket.png" />
+			</rule>
+			<rule e="node" k="shop" v="convenience" zoom-min="16">
+				<rule e="node" k="*" v="*" zoom-min="18">
+					<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+				<symbol src="file:/symbols/convenience.png" />
+			</rule>
+			<rule e="node" k="shop" v="clothes" zoom-min="17">
+				<rule e="node" k="*" v="*" zoom-min="18">
+					<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+				<symbol src="file:/symbols/clothes.png" />
+			</rule>
+			<rule e="node" k="shop" v="gift" zoom-min="17">
+				<rule e="node" k="*" v="*" zoom-min="18">
+					<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+				<symbol src="file:/symbols/gift.png" />
+			</rule>
+			<rule e="node" k="shop" v="bicycle" zoom-min="17">
+				<rule e="node" k="*" v="*" zoom-min="18">
+					<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+				<symbol src="file:/symbols/bicycle.png" />
+			</rule>
+			<rule e="node" k="shop" v="car_repair" zoom-min="17">
+				<rule e="node" k="*" v="*" zoom-min="18">
+					<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+				<symbol src="file:/symbols/car_repair.png" />
+			</rule>
+			<rule e="node" k="shop" v="wine" zoom-min="17">
+				<rule e="node" k="*" v="*" zoom-min="18">
+					<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+				</rule>
+				<symbol src="file:/symbols/wine.png" />
+			</rule>
+		</rule>
+
+		<!-- tourism -->
+		<rule e="node" k="tourism" v="*">
+			<rule e="node" k="tourism" v="information" zoom-min="16">
+				<symbol src="file:/symbols/information.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="tourism" v="viewpoint" zoom-min="16">
+				<symbol src="file:/symbols/viewpoint.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="tourism" v="alpine_hut" zoom-min="14">
+				<symbol src="file:/symbols/alpine_hut.png" />
+			<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="tourism" v="chalet|wilderness_hut" zoom-min="14">
+				<symbol src="file:/symbols/chalet.png" />
+			<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="tourism" v="camp_site" zoom-min="15">
+				<symbol src="file:/symbols/campSite.png" />
+				<caption k="name" dy="-19" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="tourism" v="museum" zoom-min="16">
+				<symbol src="file:/symbols/museum.png" />
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="tourism" v="hostel" zoom-min="15">
+				<symbol src="file:/symbols/hostel.png" />
+			<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="tourism" v="hotel" zoom-min="15">
+				<symbol src="file:/symbols/hotel.png" />
+			<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="tourism" v="zoo" zoom-min="16">
+				<symbol src="file:/symbols/zoo.png" />
+			<caption k="name" dy="-17" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+			stroke-width="2.00" />
+			</rule>
+
+			<rule e="node" k="tourism" v="theme_park" zoom-min="16">
+				<symbol src="file:/symbols/theme_park.png" />
+			<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+			stroke-width="2.00" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="17">
+				<caption k="name" dy="-15" font-style="bold" font-size="9" fill="#000000" stroke="#ffffff"
+					stroke-width="2.00" />
+			</rule>
+		</rule>
+	</rule>
+</rendertheme>
