@@ -21,6 +21,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -29,6 +30,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.FileUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import org.mapsforge.core.model.LatLong;
@@ -109,6 +111,27 @@ public class GettingStarted extends Activity {
         LinearLayout layout = findViewById(R.id.layoutMap);
         layout.addView(mapView);
 
+        InitMap();
+
+        findViewById(R.id.buttonGpsCenter).setBackgroundColor(Color.TRANSPARENT);
+        findViewById(R.id.buttonGpsCenterContinuous).setBackgroundColor(Color.TRANSPARENT);
+        findViewById(R.id.buttonDownloadMap).setBackgroundColor(Color.TRANSPARENT);
+    }
+
+    @Override
+    protected void onDestroy() {
+        /*
+         * Whenever your activity exits, some cleanup operations have to be performed lest your app
+         * runs out of memory.
+         */
+        mapView.destroyAll();
+        AndroidGraphicFactory.clearResourceMemoryCache();
+        super.onDestroy();
+
+        unregisterReceiver(onComplete);
+    }
+
+    private void InitMap(){
         try {
             /*
              * We then make some simple adjustments, such as showing a scale bar and zoom controls.
@@ -139,10 +162,10 @@ public class GettingStarted extends Activity {
 
             //tileRendererLayer.setXmlRenderTheme(InternalRenderTheme.DEFAULT);
 
-            //File themeFile = new File(getExternalFilesDir(null), "Openmaps/Theme.xml");
-            //XmlRenderTheme theme = new ExternalRenderTheme(themeFile);
+            File themeFile = new File(getExternalFilesDir(null), "Vectorial_V7/Vectorial_V7.xml");
+            XmlRenderTheme theme = new ExternalRenderTheme(themeFile);
 
-            XmlRenderTheme theme = new AssetsRenderTheme(this, "OpenmapsTheme/","theme.xml");
+            //XmlRenderTheme theme = new AssetsRenderTheme(this, "OpenmapsTheme/","theme.xml");
 
             ///XmlRenderTheme theme = new AssetsRenderTheme(this, "", themeFile.getAbsolutePath());
             //XmlRenderTheme theme = new AssetsRenderTheme(getApplicationContext(), "Openmaps/", "Theme.xml");
@@ -186,19 +209,6 @@ public class GettingStarted extends Activity {
              */
             e.printStackTrace();
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        /*
-         * Whenever your activity exits, some cleanup operations have to be performed lest your app
-         * runs out of memory.
-         */
-        mapView.destroyAll();
-        AndroidGraphicFactory.clearResourceMemoryCache();
-        super.onDestroy();
-
-        unregisterReceiver(onComplete);
     }
 
     public void buttonGpsCenterClick(View view){
@@ -252,6 +262,7 @@ public class GettingStarted extends Activity {
 
     public void buttonGpsCenterContinuousClick(View view){
         LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        Button button = (Button)view;
 
         if (IsRequestLocationUpdatesRunning){
             IsRequestLocationUpdatesRunning = false;
@@ -260,7 +271,11 @@ public class GettingStarted extends Activity {
                 lm.removeUpdates(ContinuousLocationListener);
             }
             LastLocation = null;
+            button.setBackgroundColor(Color.TRANSPARENT);
+            return;
         }
+
+        button.setBackgroundColor(Color.GRAY);
 
         ContinuousLocationListener = new LocationListener() {
             @Override
@@ -307,12 +322,30 @@ public class GettingStarted extends Activity {
         try{
             registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
+            File existingMapFile = new File(getExternalFilesDir(null), "hungary.zip");
+            if (existingMapFile.exists()){
+                existingMapFile.delete();
+            }
+
             //File mapFile = new File(getExternalFilesDir(null), MAP_FILE);
             DownloadManager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
             Uri uri = Uri.parse("http://openmaps.eu/dltosm.php?dl=hungary_openmaps_eu_europe.map.zip");
             DownloadManager.Request request =  new DownloadManager.Request(uri);
             request.setDestinationInExternalFilesDir(this, null, "hungary.zip");
             DownloadManager.enqueue(request);
+
+            File existingThemeFile = new File(getExternalFilesDir(null), "Vectorial_V7/Vectorial_V7.xml");
+            if (!existingThemeFile.exists()){
+                File existingThemeFileZip = new File(getExternalFilesDir(null), "Vectorial_V7.zip");
+                if (existingThemeFileZip.exists()){
+                    existingThemeFileZip.delete();
+                }
+
+                Uri themeUri = Uri.parse("https://openmaps.eu/renderthemes/Vectorial_V7.zip");
+                DownloadManager.Request themeRequest =  new DownloadManager.Request(themeUri);
+                themeRequest.setDestinationInExternalFilesDir(this, null, "Vectorial_V7.zip");
+                DownloadManager.enqueue(themeRequest);
+            }
         }
         catch (Exception e){
             e.printStackTrace();
@@ -322,8 +355,17 @@ public class GettingStarted extends Activity {
 
     BroadcastReceiver onComplete= new BroadcastReceiver() {
         public void onReceive(Context ctxt, Intent intent) {
+           extractMapFile();
+           extractThemeFile();
+        }
+
+        private void extractMapFile(){
             try{
                 File mapFile = new File(getExternalFilesDir(null), "hungary.zip");
+                if (!mapFile.exists()){
+                    return;
+                }
+
                 ZipFile zipFile = new ZipFile(mapFile);
                 //InputStream stream = zipFile.getInputStream();
                 for(Enumeration e = zipFile.entries(); e.hasMoreElements();){
@@ -345,6 +387,46 @@ public class GettingStarted extends Activity {
                         outputStream.close();
                     }
                 }
+
+                mapFile.delete();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        private  void extractThemeFile(){
+            try{
+                File mapFile = new File(getExternalFilesDir(null), "Vectorial_V7.zip");
+                if (!mapFile.exists()){
+                    return;
+                }
+
+                ZipFile zipFile = new ZipFile(mapFile);
+                //InputStream stream = zipFile.getInputStream();
+                for(Enumeration e = zipFile.entries(); e.hasMoreElements();){
+                    ZipEntry entry = (ZipEntry)e.nextElement();
+                    if(entry.isDirectory()){
+                        File dir = new File(getExternalFilesDir(null), entry.getName());
+                        dir.mkdir();
+                        continue;
+                    }
+
+                    File file = new File(getExternalFilesDir(null), entry.getName());
+                    BufferedInputStream stream = new BufferedInputStream(zipFile.getInputStream(entry));
+                    BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(file));
+
+                    try {
+                        //IOUtils.copy(stream, outputStream);
+                        copyStream(stream, outputStream);
+                    }
+                    finally {
+                        stream.close();
+                        outputStream.close();
+                    }
+                }
+
+                mapFile.delete();
             }
             catch (Exception e){
                 e.printStackTrace();
